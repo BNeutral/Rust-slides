@@ -6,7 +6,9 @@
 
 - [Herramientas](./chapter_1.md)
 	- [Compilador y proyecto](./chapter_1.md)
-	- [Baterias Incluidas](./chapter_1.md)
+	- [Documentacion](./chapter_1.md)
+	- [Unit Testing](./chapter_1.md)
+	- [Crates](./chapter_1.md)
 
 - [Sintaxis Básica](./chapter_1.md)
 	- [Variables y tipado](./chapter_1.md)
@@ -17,17 +19,18 @@
 	- [Macros](./chapter_1.md)
 	- [Closures](./chapter_1.md)
 	- [Control de flujo](./chapter_1.md)
-	- [Structs](./chapter_1.md)
+	- [Structs y métodos](./chapter_1.md)
 	- [Enums](./chapter_1.md)
 	- [Traits](./chapter_1.md)
 	- [Pattern matching](./chapter_1.md)
+	- [Iteradores](./chapter_1.md)
 
 - [Conceptos Fundamentales](./chapter_1.md)
 	- [Option, Result, panic!](./chapter_1.md)
 	- [Heap vs Stack](./chapter_1.md)
 	- [Referencias](./chapter_1.md)	
 	- [Ownership](./chapter_1.md)
-	- [Move semantics](./chapter_1.md)
+	- [Borrowing](./chapter_1.md)
 	- [Tiempos de vida](./chapter_1.md)
 	- [Smart pointers](./chapter_1.md)
 
@@ -37,10 +40,11 @@
 	- [Memoria compartida](./chapter_1.md)
 	- [Extensión](./chapter_1.md)
 
-- [Extra](./chapter_1.md)
-	- [Features avanzadas](./chapter_1.md)
+- [Extras](./chapter_1.md)
+	- [Mencion de features avanzadas](./chapter_1.md)
 	- [Llamar codigo C](./chapter_1.md)
 
-- [Estado](./chapter_1.md)
+- [Uso](./chapter_1.md)
 	- [Popularidad](./chapter_1.md)
+	- [Benchmarks](./chapter_1.md)
 	- [Casos de Uso](./chapter_1.md)
