@@ -1,6 +1,6 @@
 # Rust
 
-- [Introducción](./chapter_1.md)
+- [Introducción](./intro.md)
 	- [Historia](./chapter_1.md)
 	- [Fetures notorios, target](./chapter_1.md)
 
