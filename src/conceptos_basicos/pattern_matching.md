@@ -1,6 +1,6 @@
 # Pattern matching
 
-* Compilador exige exhaustividad: `_`
+* Compilador exige ramas para todos los valores posibles
 * También es expresión
     ```
     let boolean = true;
