@@ -26,8 +26,9 @@
 	- [Iteradores](./chapter_1.md)
 	- [Macros](./chapter_1.md)
 
-- [Conceptos Fundamentales](./chapter_1.md)
-	- [Option, Result, panic!](./chapter_1.md)
+- [Conceptos Fundamentales](./conceptos_fundamentales/conceptos_fundamentales.md)
+	- [Option](./conceptos_fundamentales/option.md)
+	- [Result, panic!](./chapter_1.md)
 	- [Heap vs Stack](./chapter_1.md)
 	- [Referencias](./chapter_1.md)	
 	- [Ownership](./chapter_1.md)
