@@ -28,7 +28,9 @@
 
 - [Conceptos Fundamentales](./conceptos_fundamentales/conceptos_fundamentales.md)
 	- [Option](./conceptos_fundamentales/option.md)
-	- [Result, panic!](./chapter_1.md)
+	- [Manejo de errores](./conceptos_fundamentales/manejerr.md)
+		- [Panic!](./conceptos_fundamentales/panic.md)
+		- [Result](./conceptos_fundamentales/result.md)
 	- [Heap vs Stack](./chapter_1.md)
 	- [Referencias](./chapter_1.md)	
 	- [Ownership](./chapter_1.md)
