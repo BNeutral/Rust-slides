@@ -2,7 +2,7 @@
 
 * Compilador exige ramas para todos los valores posibles
 * También es expresión
-    ```
+    ```rust
     let boolean = true;
     let binary = match boolean {
         false => 0,

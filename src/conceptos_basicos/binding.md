@@ -7,7 +7,7 @@
     * Compilador prohíbe uso de variables no inicializadas
 * Inferencia de tipos en base de uso
 * Alias:
-    ```
+    ```rust
     type Dollar = f64;
     let cookie_price: Dollar = 1.43;
     ```
