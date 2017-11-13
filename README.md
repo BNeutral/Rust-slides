@@ -28,6 +28,6 @@ Aquellas lineas que tengan # adelante no se mostraran.
 
 O alternativamente
 
-```rust
+\`\`\`rust
 //Codigo de rust
-```
+\`\`\`
