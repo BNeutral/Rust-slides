@@ -1,8 +1,10 @@
 # Rust
 
 - [Introducción](./intro.md)
-	- [Historia](./chapter_1.md)
-	- [Fetures notorios, target](./chapter_1.md)
+	- [Historia](./introduccion/historia.md)
+	- [Features notorios, target](./introduccion/target.md)
+	- [Popularidad](./introduccion/popularidad.md)
+	- [Benchmarks](./introduccion/benchmarks.md)
 
 - [Herramientas](./chapter_1.md)
 	- [Compilador y proyecto](./chapter_1.md)
@@ -49,6 +51,4 @@
 	- [Llamar codigo C](./chapter_1.md)
 
 - [Uso](./chapter_1.md)
-	- [Popularidad](./chapter_1.md)
-	- [Benchmarks](./chapter_1.md)
 	- [Casos de Uso](./chapter_1.md)

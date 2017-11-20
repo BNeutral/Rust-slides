@@ -6,6 +6,9 @@
 ## Integrantes:
 
 * Dyatlov Nikita
+
 * Marin Francisco 
+
 * Prystupiuk Maximiliano
+
 * Williner Mariano
