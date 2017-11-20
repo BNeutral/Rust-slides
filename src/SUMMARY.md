@@ -25,9 +25,7 @@
 	- [Traits (2)](./conceptos_basicos/traits_2.md)
 	- [Generics](./conceptos_basicos/generics.md)
 	- [Higher Order Functions](./conceptos_basicos/high_order_functions.md)
-	- [Closures](./conceptos_basicos/closures.md)
-	- [Iteradores](./chapter_1.md)
-	- [Macros](./chapter_1.md)
+	- [Lazy](./conceptos_basicos/lazy.md)
 
 - [Conceptos Fundamentales](./conceptos_fundamentales/conceptos_fundamentales.md)
 	- [Option](./conceptos_fundamentales/option.md)
