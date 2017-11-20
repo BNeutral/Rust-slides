@@ -5,7 +5,7 @@
 
 ## Integrantes:
 
-* Dyatlov, Nikita
+* Dyatlov Nikita
+* Marin Francisco 
 * Prystupiuk Maximiliano
-* Mariano
-* Otro chico
+* Williner Mariano
