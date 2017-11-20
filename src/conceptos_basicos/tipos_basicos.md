@@ -10,7 +10,7 @@
     * Puede ser Unit struct: `struct Comparator`
 * Tuple structs: `struct Point(i32, i32, i32)`
 * Enums:
-    ```rust
+    ```
     enum BoardGameAction {
         Move { squares: i32 },
         Surrender,
