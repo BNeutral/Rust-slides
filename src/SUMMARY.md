@@ -21,10 +21,11 @@
 	- [Pattern matching](./conceptos_basicos/pattern_matching.md)
 	- [Funciones](./conceptos_basicos/funciones.md)
 	- [Métodos](./conceptos_basicos/metodos.md)
-	- [Traits](./conceptos_basicos/traits.md)
+	- [Traits (1)](./conceptos_basicos/traits_1.md)
+	- [Traits (2)](./conceptos_basicos/traits_2.md)
+	- [Generics](./conceptos_basicos/generics.md)
 	- [Higher Order Functions](./conceptos_basicos/high_order_functions.md)
 	- [Closures](./conceptos_basicos/closures.md)
-	- [Generics](./chapter_1.md)
 	- [Iteradores](./chapter_1.md)
 	- [Macros](./chapter_1.md)
 

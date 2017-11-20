@@ -3,8 +3,8 @@
 * `if / else` es una expresión
 * `loop` con `break` y `continue`
 * `while`
-* `for` para usarlo con iteradores
-* `match` para pattern matching
+* `for x in 0..10` para usar con iteradores
+* `match`
 * `if let` para evaluar desestructuración y asignar al mismo tiempo
     ```
     if let BoardGameAction::Move { squares } = x {
