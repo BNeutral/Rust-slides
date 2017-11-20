@@ -6,7 +6,7 @@
 	- [Popularidad](./introduccion/popularidad.md)
 	- [Benchmarks](./introduccion/benchmarks.md)
 
-- [Herramientas](./chapter_1.md)
+- [Herramientas](./herramientas/herramientas.md)
 	- [Compilador y proyecto](./chapter_1.md)
 	- [Documentacion](./chapter_1.md)
 	- [Unit Testing](./chapter_1.md)
