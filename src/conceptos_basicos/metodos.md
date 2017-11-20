@@ -1,6 +1,6 @@
 # Métodos
 
-* No clases de cajon, sí los mecanismos de POO
+* No hay clases de cajon, sí los mecanismos de POO
 
 ```rust
 struct Point { x: f64, y: f64 }

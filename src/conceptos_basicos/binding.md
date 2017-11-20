@@ -2,6 +2,7 @@
 
 * `let immutable_binding = 1`
 * `let mut mutable_binding = 1`
+* Mutabilidad como propiedad de binding
 * Scope & Shadowing
 * Se puede solo declarar, para luego inicializar
     * Compilador prohíbe uso de variables no inicializadas
