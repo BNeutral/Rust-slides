@@ -4,13 +4,13 @@ __No existe__
 
 Hay __tipo__ unit () que representa nada, pero es un tipo, no un valor. Similar a un void.
 
-Código valido:
+✔️
 {{#playpen ./code/unit1.rs}}
 
-Código invalido:
+❌
 {{#playpen ./code/unit2.rs}}
 
-Si se usa algo sin inicializar, no compila. 
+❌ por no inicializado 
 {{#playpen ./code/unit3.rs}}
 
 # Option

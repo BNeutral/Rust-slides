@@ -33,7 +33,7 @@
 	- [Manejo de errores](./conceptos_fundamentales/manejerr.md)
 		- [Panic!](./conceptos_fundamentales/panic.md)
 		- [Result](./conceptos_fundamentales/result.md)
-	- [Heap vs Stack](./chapter_1.md)
+	- [Heap y Stack](./conceptos_fundamentales/heapstack.md)
 	- [Referencias](./chapter_1.md)	
 	- [Ownership](./chapter_1.md)
 	- [Borrowing](./chapter_1.md)

@@ -20,11 +20,13 @@ Lo mismo pero permite poner un mensaje:
 
 # Propagación de results
 
-Se puede lanzar hacia arriba a mitad de expresión con return
+Se puede lanzar hacia arriba a mitad de expresión con "return"
 
 {{#playpen ./code/result5.rs}}
 
-Azucar: Se usa el símbolo "__?__"
+## Azucar
+
+Se usa el símbolo "__?__"
 
 {{#playpen ./code/result6.rs}}
 
