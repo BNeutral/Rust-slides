@@ -7,7 +7,7 @@
     * Comunes: `(2, 5.8, 's')`
     * Unit type (tupla vacía): `()`
 * Structs: `struct Point { x: f64, y: f64 }`
-    * Puede ser Unit struct: `struct Comparator`
+    * Puede ser unit-like: `struct Comparator`
 * Tuple structs: `struct Point(i32, i32, i32)`
 * Enums:
     ```
