@@ -39,11 +39,11 @@
 	- [Tiempos de vida](./chapter_1.md)
 	- [Smart pointers](./chapter_1.md)
 
-- [Concurrencia](./chapter_1.md)
-	- [Threads](./chapter_1.md)
-	- [Canales](./chapter_1.md)
-	- [Memoria compartida](./chapter_1.md)
-	- [Extensión](./chapter_1.md)
+- [Concurrencia](./concurrencia/concurrencia.md)
+	- [Threads](./concurrencia/threads.md)
+	- [Canales](./concurrencia/canales.md)
+	- [Memoria compartida](./concurrencia/memoria_compartida.md)
+	- [Extensión](./concurrencia/extension.md)
 
 - [Extras](./chapter_1.md)
 	- [Mencion de features avanzadas](./chapter_1.md)
