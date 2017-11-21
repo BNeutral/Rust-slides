@@ -13,8 +13,9 @@
 	- [Crates](./chapter_1.md)
 
 - [Conceptos Básicos](./conceptos_basicos/conceptos_basicos.md)
-    - [Tipos primitivos](./conceptos_basicos/tipos_primitivos.md)
-    - [Tipos básicos](./conceptos_basicos/tipos_basicos.md)
+    - [Tipos básicos (1)](./conceptos_basicos/tipos_basicos_1.md)
+    - [Tipos básicos (2)](./conceptos_basicos/tipos_basicos_2.md)
+    - [Option](./conceptos_basicos/option.md)
 	- [Binding](./conceptos_basicos/binding.md)
 	- [Expresiones](./conceptos_basicos/expresiones.md)
 	- [Control de flujo](./conceptos_basicos/control_de_flujo.md)
@@ -28,7 +29,6 @@
 	- [Lazy](./conceptos_basicos/lazy.md)
 
 - [Conceptos Fundamentales](./conceptos_fundamentales/conceptos_fundamentales.md)
-	- [Option](./conceptos_fundamentales/option.md)
 	- [Manejo de errores](./conceptos_fundamentales/manejerr.md)
 		- [Panic!](./conceptos_fundamentales/panic.md)
 		- [Result](./conceptos_fundamentales/result.md)

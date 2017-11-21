@@ -1,11 +1,6 @@
-# Tipos básicos
+# Tipos básicos (2)
 
-* Strings (UTF-8): `&str` y `String`
-* Arrays: `[1, 2, 3]`, `[0; 5]`
-* Slices: `&mi_vector[1..4]`
-* Tuples:
-    * Comunes: `(2, 5.8, 's')`
-    * Unit type (tupla vacía): `()`
+* Tuples: `(2, 5.8, 's')`
 * Structs: `struct Point { x: f64, y: f64 }`
     * Puede ser unit-like: `struct Comparator`
 * Tuple structs: `struct Point(i32, i32, i32)`
@@ -16,4 +11,9 @@
         Surrender,
         Chat(String)
     }
+    ```
+* Rust no tiene null. Hay unit type, `()`, cuyo único valor es `()`. Similar a un void.
+    ```rust
+    let a: () = ();
+    println!("{:?}", a)
     ```
