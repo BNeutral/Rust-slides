@@ -1,6 +1,5 @@
 #fn main() {
 	let a = String::from("Hola");
-	let mut b = a.clone();
-	b.push('!');
+	let b = a;
 	println!("a:{} b:{}",a,b);
 #}

@@ -1,4 +1,4 @@
-# Heap y Stack
+# Heap, stack, referencias
 
 ## Stack
 
@@ -9,7 +9,7 @@ Se alocan los tipos básicos numéricos de tamaño conocido en tiempo de compila
 * Bools
 * Tuplas que contengan solo estos tipos
 
-Luego se los pasa por copia.
+Se pasan por copia.
 
 {{#playpen ./code/heap1.rs}}
 
@@ -21,24 +21,13 @@ Luego se los pasa por referencia.
 
 Si se quiere copia hay que hacerlo explicito:
 
-{{#playpen ./code/heap3.rs}}
-
-Sino... no compila!
-
 {{#playpen ./code/heap2.rs}}
+
+Si intento usar dos referencias a algo... no compila!
+
+{{#playpen ./code/heap3.rs}}
 
 Por que?
 
-Cuando termina el scope de una variable, se la libera de memoria. Si tuvieramos dos punteros a lo mismo, se lo liberaría 2 veces. Rust ataja este problema en tiempo de compilación. Crea el concepto de "ownership" y "move" que veremos en el próximo slide.
-
-## Copy trait
-
-Hace que se creen copias en vez de pasarse por referencia.
-
-## Drop trait
-
-Indica que hacer cuando sale del scope una variable.
-
-Si se implementa copy no se puede implementar drop, y viceversa.
-
+Cuando termina el scope de una variable, se la libera de memoria. Si tuvieramos dos punteros a lo mismo, se lo liberaría 2 veces. Rust ataja este problema en tiempo de compilación. Crea el concepto de "__ownership__", "__move__", y "__borrowing__".
 
