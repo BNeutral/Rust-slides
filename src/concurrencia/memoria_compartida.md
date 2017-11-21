@@ -1,6 +1,6 @@
-#Memoria compartida
+# Memoria compartida
 
-##Mutex
+## Mutex
 
 - Permiten que los datos sean accedidos por un sólo thread a la vez.
 
@@ -14,6 +14,6 @@
 
 ----------------------
 
-##Ejemplo
+## Ejemplo
 
 {{#playpen ./code/mutex.rs}}

@@ -1,4 +1,4 @@
-#Canales
+# Canales
 
 - Se utilizan para pasar mensajes entre threads.
 
@@ -12,7 +12,7 @@
 
 ----------------------
 
-##Ejemplo
+## Ejemplos
 
 {{#playpen ./code/canales1.rs}}
 

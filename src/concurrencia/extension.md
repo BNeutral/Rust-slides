@@ -1,9 +1,9 @@
-#Extensión
+# Extensión
 
 __Rust__ permite crear nuestra propia implementación de concurrencia diferente a la que se encuentra en la __standard library__ utilizando los traits __Send__ and __Sync__.
 
 
-##Send
+## Send
 
 - Indica que el ownership puede ser transferido a otro thread.
 
@@ -11,7 +11,7 @@ __Rust__ permite crear nuestra propia implementación de concurrencia diferente a
 
 - Los tipos que están compuestos por tipos __Send__, también lo son.
 
-##Sync
+## Sync
 
 -  Indica que el acceso desde múltiples threads es seguro.
 
