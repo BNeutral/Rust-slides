@@ -1,4 +1,4 @@
-# Rust
+﻿# Rust
 
 - [Introducción](./intro.md)
 	- [Historia](./introduccion/historia.md)
@@ -49,5 +49,5 @@
 	- [Mencion de features avanzadas](./chapter_1.md)
 	- [Llamar codigo C](./chapter_1.md)
 
-- [Uso](./uso/uso_1.md)
+- [Uso](./uso/uso.md)
 	- [Casos de Uso](./uso/casos_de_uso.md)
