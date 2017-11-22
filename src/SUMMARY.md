@@ -7,10 +7,10 @@
 	- [Benchmarks](./introduccion/benchmarks.md)
 
 - [Herramientas](./herramientas/herramientas.md)
-	- [Compilador y proyecto](./chapter_1.md)
-	- [Documentacion](./chapter_1.md)
-	- [Unit Testing](./chapter_1.md)
-	- [Crates](./chapter_1.md)
+	- [Compilador y proyecto]()
+	- [Documentacion]()
+	- [Cargo]()
+	- [Crates]()
 
 - [Conceptos Básicos](./conceptos_basicos/conceptos_basicos.md)
     - [Tipos básicos (1)](./conceptos_basicos/tipos_basicos_1.md)

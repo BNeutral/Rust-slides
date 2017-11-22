@@ -30,4 +30,5 @@
 * Generics
 
 ## La intención del lenguaje es combinar varias​ características para obtener algo fácil de mantener y debuggear, seguro y eficiente.
+
 [Entrevista con Graydon Hoare](https://www.infoq.com/news/2012/08/Interview-Rust)
