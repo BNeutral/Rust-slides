@@ -9,4 +9,16 @@ fn main() {
         let inner_counter_mutex = counter_mutex.clone();
         let handle = thread::spawn(move || {
             let mut counter = inner_counter_mutex.lock().unwrap();
-            println!("Thread N
+            println!("Thread Nº {} has the lock", i);
+            *counter += 1;
+            println!("Thread Nº {} still has the lock", i);
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    println!("Counter: {}", *counter_mutex.lock().unwrap());
+}
