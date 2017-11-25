@@ -14,8 +14,6 @@ impl Point {
     }
 }
 
-fn main() {
-    let c = Point::new(4.0, -3.0);
-    println!("{}", c.distance_to_origin());
-}
+let c = Point::new(4.0, -3.0);
+println!("{}", c.distance_to_origin());
 ```
