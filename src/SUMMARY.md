@@ -49,9 +49,13 @@
 	- [Memoria compartida](./concurrencia/memoria_compartida.md)
 	- [Extensión](./concurrencia/extension.md)
 
-- [Extras](./chapter_1.md)
-	- [Mencion de features avanzadas](./chapter_1.md)
-	- [Llamar codigo C](./chapter_1.md)
+- [Características avanzadas](./caracteristicas_avanzadas/caracteristicas_avanzadas.md)
+	- [Rust inseguro](./caracteristicas_avanzadas/rust_inseguro.md)
+	- [Tiempos de vida avanzados](./caracteristicas_avanzadas/tiempos_de_vida_avanzados.md)
+	- [Traits avanzados](./caracteristicas_avanzadas/traits_avanzados.md)
+	- [Tipos avanzados](./caracteristicas_avanzadas/tipos_avanzados.md)
+	- [Funciones y Closures avanzados](./caracteristicas_avanzadas/funciones_y_closures_avanzados.md)
+	- [Llamar código de C](./caracteristicas_avanzadas/llamar_codigo_de_c.md)
 
 - [Uso](./uso/uso.md)
 	- [Casos de Uso](./uso/casos_de_uso.md)
