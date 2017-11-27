@@ -6,7 +6,7 @@ Las reglas aun deben cumplirse en tiempo de ejecución, de no hacerlo hay un pan
 
 ## Pattern de mutabilidad interior
 
-Mediante borrow() y borrow_mut() podemos elejir que tipo de borrow queremos hacer en tiempo de ejecución, pese a que la refcell sea inmutable.
+Mediante borrow() y borrow_mut() podemos elegir que tipo de borrow queremos hacer en tiempo de ejecución, pese a que la refcell sea inmutable.
 
 ❌
 {{#playpen ./code/smrefcell1.rs}}
