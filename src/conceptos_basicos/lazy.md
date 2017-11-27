@@ -3,7 +3,7 @@
 * No existe en forma nativa (hay librería hecha por comunidad)
 * Internamente usa lazy para iteradores
     ```rust
-    // suma de cuadrados de numeros impares hasta un limite
+    // suma de cuadrados de números impares hasta un límite
     let limit = 10;
 
     let result: u32 = (0..)
