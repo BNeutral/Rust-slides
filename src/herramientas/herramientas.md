@@ -1,35 +1,51 @@
-# Compilador y proyecto
+# Herramientas
+
+# Compilador
+
+Compila a ejecutable o a libreria. No existen los header files.
+
 `$ rustc main.rs`
 
 `$ ./main`
 
-
-# [Documentacion](https://doc.rust-lang.org/book/first-edition/)
-
 # Cargo
-Build system and package manager
+
+Build system y package manager
 
 `$ cargo new hello_world --bin`
 
+Crea una estructura de proyecto, permite especificar y descargar dependencias, incluso inicializa git.
 
+`$ cargo build`
 
 # Crates
-Paquetes de código Rust
 
-Actualmente hay 12,425 listos para utilizar
+Paquetes/librerias de Rust
+
+Actualmente hay 12,425 listos para utilizar en crates.io
+
 ## Forma de uso
 * Cargo.toml
 
-`[package]`
+```
+[package]
+name = "hola"
+version = "0.1.0"
+authors = ["Rust <AguanteRust@gmail.com>"]
 
-`name = "hola"`
+[dependencies]
+rand = "0.3.0"
+```
+Dependencias por defecto en crates.io, pero se puede especificar la url.
 
-`version = "0.1.0"`
+# Documentacion
 
-`authors = ["Rust <AguanteRust@gmail.com>"]`
+Se pretende usar sintaxis markdown en comentarios para luego convertirlos en docs html.
 
+`$ cargo doc`
 
+# Tests
 
-`[dependencies]`
+Unit tests incluidos via anotaciones en el código.
 
-**`rand = "0.3.0"`**
+`$ cargo test`
