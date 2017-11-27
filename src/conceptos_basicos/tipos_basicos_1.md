@@ -8,3 +8,8 @@
 * Slices: `&array[1..4]`
 * Unicode `char` de 4 bytes: `'a'`, `'♫'`
 * Strings (UTF-8): `&str` y `String`
+* Alias:
+    ```
+    type Dollar = f64;
+    let cookie_price: Dollar = 1.43;
+    ```
