@@ -17,11 +17,9 @@ Se "pide prestado" el valor. Nos volvemos dueños, pero al final lo devolvemos a
 Se mantienen las reglas de ownership.
 
 ✔️
-
 {{#playpen ./code/borrow1.rs}}
 
 ✔️
-
 {{#playpen ./code/borrow2.rs}}
 
 ## Pero y los métodos?
@@ -35,12 +33,7 @@ Se puede ver la equivalencia a continuación.
 En otros casos, si hace falta desreferenciar explicitamente.
 
 ✔️
-
 {{#playpen ./code/borrow4.rs}}
-
-❌
-
-{{#playpen ./code/borrow3.rs}}
 
 ## Reglas de borrows
 
@@ -53,13 +46,16 @@ En otros casos, si hace falta desreferenciar explicitamente.
 * Las referencias deben ser siempre validas
 
 ✔️
-
 {{#playpen ./code/borrow5.rs}}
+
+❌
+{{#playpen ./code/borrow3.rs}}
+
+❌
+{{#playpen ./code/borrow7.rs}}
+
 
 Sigue valiendo que solo se puede modificar el valor mutable si soy dueño.
 
-{{#playpen ./code/borrow6.rs}}
-
 ❌
-
-{{#playpen ./code/borrow7.rs}}
+{{#playpen ./code/borrow6.rs}}

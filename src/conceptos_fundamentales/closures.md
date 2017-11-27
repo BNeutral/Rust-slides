@@ -39,7 +39,9 @@ Pero, segun como capturan el ambiente implementan uno de los siguientes traits.
 
 Para forzar que se vuelva owner se usa la palabra move.
 
+✔️
 {{#playpen ./code/closure4.rs}}
 
+❌
 {{#playpen ./code/closure5.rs}}
 

@@ -3,9 +3,9 @@
 #fn main() {
     let f = File::open("noExiste.txt");
     match f {
-        Ok(file) => println!("OK"),
-        Err(ref error) if error.kind() == ErrorKind::NotFound 
-		=> { println!("{:?}",error) },
-        Err(error) => { panic!() },
+        Ok(_file) => println!("OK"),
+        Err(ref _error) if _error.kind() == ErrorKind::NotFound 
+		=> { println!("{:?}",_error) },
+        Err(_error) => { panic!() },
     };
 #}

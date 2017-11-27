@@ -15,17 +15,13 @@ Solo el owner puede hacer uso de la variable.
 Se llama move al cambio de owner. Pasar el valor, retornarlo, o bindearlo a otra variable cambia el owner.
 
 ❌
-
 {{#playpen ./code/own1.rs}}
 
 ❌
-
 {{#playpen ./code/own2.rs}}
 
 ❌
-
 {{#playpen ./code/own3.rs}}
 
 ✔️
-
 {{#playpen ./code/own4.rs}}
