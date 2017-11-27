@@ -1,7 +1,7 @@
 # Traits (2)
 
 * Permiten implementaciones por defecto que pueden ser sobreescritas en `impl`
-* Permiten realizar herencia
+* Permiten realizar "herencia", solo a nivel de traits
     ```
     trait Foo {
         fn foo(&self);
