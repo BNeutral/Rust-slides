@@ -42,9 +42,15 @@ En otros casos, si hace falta desreferenciar explicitamente.
 
 {{#playpen ./code/borrow3.rs}}
 
-## Diferencia de borrows
+## Reglas de borrows
 
-Se puede hacer borrow inmutablemente cuantas veces quiera.
+* En un momento dado se puede tener de forma mutuamente exclusiva:
+
+  * Una referencia mutable
+
+  * N referencias inmutables
+
+* Las referencias deben ser siempre validas
 
 ✔️
 
@@ -53,8 +59,6 @@ Se puede hacer borrow inmutablemente cuantas veces quiera.
 Sigue valiendo que solo se puede modificar el valor mutable si soy dueño.
 
 {{#playpen ./code/borrow6.rs}}
-
-Puede haber un solo borrow mutable.
 
 ❌
 

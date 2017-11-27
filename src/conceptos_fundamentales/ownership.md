@@ -8,6 +8,8 @@
 
 Estas reglas son obligatorias y chequeadas por el compilador.
 
+Solo el owner puede hacer uso de la variable.
+
 ## Move
 
 Se llama move al cambio de owner. Pasar el valor, retornarlo, o bindearlo a otra variable cambia el owner.

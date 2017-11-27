@@ -37,14 +37,15 @@
 	- [Borrowing](./conceptos_fundamentales/borrow.md)
 	- [Tiempos de vida](./conceptos_fundamentales/tiempos.md)
 	- [Para que?](./conceptos_fundamentales/para que.md)
-	- [Traits especiales](./conceptos_fundamentales/sptrait.md)
-	- [Smart pointers](./conceptos_fundamentales/smart pointers.md)
-		- [Box](./chapter_1.md)
-		- [Rc](./chapter_1.md)
-		- [RefCell](./chapter_1.md)
-		- [Weak](./chapter_1.md)
-	- [Raw pointers](./conceptos_fundamentales/raw pointers.md)
 	- [Closures](./conceptos_fundamentales/closures.md)
+	- [Smart pointers](./conceptos_fundamentales/smart pointers.md)
+		- [Box](./conceptos_fundamentales/smbox.md)
+		- [Rc](./conceptos_fundamentales/smrc.md)
+		- [Deref y Drop](./conceptos_fundamentales/dyd.md)
+		- [RefCell](./conceptos_fundamentales/smrefcell.md)
+		- [Weak](./conceptos_fundamentales/smweak.md)
+		- [Resumen](./conceptos_fundamentales/smresumen.md)
+	- [Raw pointers](./conceptos_fundamentales/raw pointers.md)
 
 - [Concurrencia](./concurrencia/concurrencia.md)
 	- [Threads](./concurrencia/threads.md)
@@ -58,3 +59,5 @@
 
 - [Uso](./uso/uso.md)
 	- [Casos de Uso](./uso/casos_de_uso.md)
+
+- [Bibliografía](./bibliografia.md)
