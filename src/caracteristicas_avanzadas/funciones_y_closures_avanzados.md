@@ -16,7 +16,7 @@
 
 - __Rust__ no permite utilizar __closures__ cómo return type de una función porque no puede saber cuanto espacio va a necesitar para almacenar dicho closure.
 
-- Se debe encapsular haciendo uso de un trait.
+- Se debe encapsular haciendo uso de un smart pointer.
 
 ### Ejemplo
 
