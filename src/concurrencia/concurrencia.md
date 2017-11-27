@@ -1,3 +1,3 @@
 # Concurrencia
 
-Uno de los objetivos principales de Rust
+Uno de los objetivos principales de Rust.
