@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ownership y move - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./intro.html"><strong>1.</strong> Introducción</a></li><li><ul class="section"><li><a href="./introduccion/historia.html"><strong>1.1.</strong> Historia</a></li><li><a href="./introduccion/target.html"><strong>1.2.</strong> Features notorios, target</a></li><li><a href="./introduccion/popularidad.html"><strong>1.3.</strong> Popularidad</a></li><li><a href="./introduccion/benchmarks.html"><strong>1.4.</strong> Benchmarks</a></li></ul></li><li><a href="./herramientas/herramientas.html"><strong>2.</strong> Herramientas</a></li><li><a href="./conceptos_basicos/conceptos_basicos.html"><strong>3.</strong> Conceptos Básicos</a></li><li><ul class="section"><li><a href="./conceptos_basicos/tipos_basicos_1.html"><strong>3.1.</strong> Tipos básicos (1)</a></li><li><a href="./conceptos_basicos/tipos_basicos_2.html"><strong>3.2.</strong> Tipos básicos (2)</a></li><li><a href="./conceptos_basicos/option.html"><strong>3.3.</strong> Option</a></li><li><a href="./conceptos_basicos/binding.html"><strong>3.4.</strong> Binding</a></li><li><a href="./conceptos_basicos/expresiones.html"><strong>3.5.</strong> Expresiones</a></li><li><a href="./conceptos_basicos/control_de_flujo.html"><strong>3.6.</strong> Control de flujo</a></li><li><a href="./conceptos_basicos/pattern_matching.html"><strong>3.7.</strong> Pattern matching</a></li><li><a href="./conceptos_basicos/funciones.html"><strong>3.8.</strong> Funciones</a></li><li><a href="./conceptos_basicos/metodos.html"><strong>3.9.</strong> Métodos</a></li><li><a href="./conceptos_basicos/traits_1.html"><strong>3.10.</strong> Traits (1)</a></li><li><a href="./conceptos_basicos/traits_2.html"><strong>3.11.</strong> Traits (2)</a></li><li><a href="./conceptos_basicos/generics.html"><strong>3.12.</strong> Generics</a></li><li><a href="./conceptos_basicos/high_order_functions.html"><strong>3.13.</strong> Higher Order Functions</a></li><li><a href="./conceptos_basicos/lazy.html"><strong>3.14.</strong> Lazy</a></li></ul></li><li><a href="./conceptos_fundamentales/conceptos_fundamentales.html"><strong>4.</strong> Conceptos Fundamentales</a></li><li><ul class="section"><li><a href="./conceptos_fundamentales/manejerr.html"><strong>4.1.</strong> Manejo de errores</a></li><li><ul class="section"><li><a href="./conceptos_fundamentales/panic.html"><strong>4.1.1.</strong> Panic!</a></li><li><a href="./conceptos_fundamentales/result.html"><strong>4.1.2.</strong> Result</a></li></ul></li><li><a href="./conceptos_fundamentales/heapstack.html"><strong>4.2.</strong> Heap y Stack</a></li><li><a href="./conceptos_fundamentales/ownership.html" class="active"><strong>4.3.</strong> Ownership y move</a></li><li><a href="./conceptos_fundamentales/borrow.html"><strong>4.4.</strong> Borrowing</a></li><li><a href="./conceptos_fundamentales/tiempos.html"><strong>4.5.</strong> Tiempos de vida</a></li><li><a href="./conceptos_fundamentales/para que.html"><strong>4.6.</strong> Para que?</a></li><li><a href="./conceptos_fundamentales/closures.html"><strong>4.7.</strong> Closures</a></li><li><a href="./conceptos_fundamentales/smart pointers.html"><strong>4.8.</strong> Smart pointers</a></li><li><ul class="section"><li><a href="./conceptos_fundamentales/smbox.html"><strong>4.8.1.</strong> Box</a></li><li><a href="./conceptos_fundamentales/smrc.html"><strong>4.8.2.</strong> Rc</a></li><li><a href="./conceptos_fundamentales/dyd.html"><strong>4.8.3.</strong> Deref y Drop</a></li><li><a href="./conceptos_fundamentales/smrefcell.html"><strong>4.8.4.</strong> RefCell</a></li><li><a href="./conceptos_fundamentales/smweak.html"><strong>4.8.5.</strong> Weak</a></li><li><a href="./conceptos_fundamentales/smresumen.html"><strong>4.8.6.</strong> Resumen</a></li></ul></li><li><a href="./conceptos_fundamentales/raw pointers.html"><strong>4.9.</strong> Raw pointers</a></li></ul></li><li><a href="./concurrencia/concurrencia.html"><strong>5.</strong> Concurrencia</a></li><li><ul class="section"><li><a href="./concurrencia/threads.html"><strong>5.1.</strong> Threads</a></li><li><a href="./concurrencia/canales.html"><strong>5.2.</strong> Canales</a></li><li><a href="./concurrencia/memoria_compartida.html"><strong>5.3.</strong> Memoria compartida</a></li><li><a href="./concurrencia/extension.html"><strong>5.4.</strong> Extensión</a></li></ul></li><li><a href="./caracteristicas_avanzadas/caracteristicas_avanzadas.html"><strong>6.</strong> Características avanzadas</a></li><li><ul class="section"><li><a href="./caracteristicas_avanzadas/rust_inseguro.html"><strong>6.1.</strong> Rust inseguro</a></li><li><a href="./caracteristicas_avanzadas/tiempos_de_vida_avanzados.html"><strong>6.2.</strong> Tiempos de vida avanzados</a></li><li><a href="./caracteristicas_avanzadas/traits_avanzados.html"><strong>6.3.</strong> Traits avanzados</a></li><li><a href="./caracteristicas_avanzadas/tipos_avanzados.html"><strong>6.4.</strong> Tipos avanzados</a></li><li><a href="./caracteristicas_avanzadas/funciones_y_closures_avanzados.html"><strong>6.5.</strong> Funciones y Closures avanzados</a></li><li><a href="./caracteristicas_avanzadas/llamar_codigo_de_c.html"><strong>6.6.</strong> Llamar código de C</a></li></ul></li><li><a href="./uso/uso.html"><strong>7.</strong> Uso</a></li><li><ul class="section"><li><a href="./uso/casos_de_uso.html"><strong>7.1.</strong> Casos de Uso</a></li></ul></li><li><a href="./bibliografia.html"><strong>8.</strong> Bibliografía</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <a class="header" href="./conceptos_fundamentales/ownership.html#ownership-y-move" id="ownership-y-move"><h1>Ownership y move</h1></a>
+<a class="header" href="./conceptos_fundamentales/ownership.html#las-reglas-de-rust" id="las-reglas-de-rust"><h2>Las reglas de Rust</h2></a>
+<ol>
+<li>Todo valor en Rust tiene una variable que se llama owner.</li>
+<li>En un dado momento, solo puede haber un owner.</li>
+<li>Cuando el owner sale de scope, se hace drop de la variable.</li>
+</ol>
+<p>Estas reglas son obligatorias y chequeadas por el compilador.</p>
+<p>Solo el owner puede hacer uso de la variable.</p>
+<a class="header" href="./conceptos_fundamentales/ownership.html#move" id="move"><h2>Move</h2></a>
+<p>Se llama move al cambio de owner. Pasar el valor, retornarlo, o bindearlo a otra variable cambia el owner.</p>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let s1 = String::new();
+    let _s2 = s1;
+    println!(&quot;{}&quot;,s1);
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let s1 = String::new();
+    {
+        let _s2 = s1;
+    }
+    println!(&quot;{}&quot;,s1);
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">fn seVuelveOwner(_s : String) {}
+
+fn main() {
+    let s = String::from(&quot;Rust&quot;);
+    seVuelveOwner(s);
+    println!(&quot;{}&quot;,s);	
+}
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn devuelveOwner(s : String) -&gt; String {
+    s
+}
+
+fn main() {
+    let mut s = String::from(&quot;Rust&quot;);
+    s = devuelveOwner(s);
+    println!(&quot;{}&quot;,s);	
+}
+
+</code></pre></pre>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="./conceptos_fundamentales/heapstack.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="./conceptos_fundamentales/borrow.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="./conceptos_fundamentales/heapstack.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="./conceptos_fundamentales/borrow.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

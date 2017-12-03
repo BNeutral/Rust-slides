@@ -1,0 +1,1868 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./intro.html"><strong>1.</strong> Introducción</a></li><li><ul class="section"><li><a href="./introduccion/historia.html"><strong>1.1.</strong> Historia</a></li><li><a href="./introduccion/target.html"><strong>1.2.</strong> Features notorios, target</a></li><li><a href="./introduccion/popularidad.html"><strong>1.3.</strong> Popularidad</a></li><li><a href="./introduccion/benchmarks.html"><strong>1.4.</strong> Benchmarks</a></li></ul></li><li><a href="./herramientas/herramientas.html"><strong>2.</strong> Herramientas</a></li><li><a href="./conceptos_basicos/conceptos_basicos.html"><strong>3.</strong> Conceptos Básicos</a></li><li><ul class="section"><li><a href="./conceptos_basicos/tipos_basicos_1.html"><strong>3.1.</strong> Tipos básicos (1)</a></li><li><a href="./conceptos_basicos/tipos_basicos_2.html"><strong>3.2.</strong> Tipos básicos (2)</a></li><li><a href="./conceptos_basicos/option.html"><strong>3.3.</strong> Option</a></li><li><a href="./conceptos_basicos/binding.html"><strong>3.4.</strong> Binding</a></li><li><a href="./conceptos_basicos/expresiones.html"><strong>3.5.</strong> Expresiones</a></li><li><a href="./conceptos_basicos/control_de_flujo.html"><strong>3.6.</strong> Control de flujo</a></li><li><a href="./conceptos_basicos/pattern_matching.html"><strong>3.7.</strong> Pattern matching</a></li><li><a href="./conceptos_basicos/funciones.html"><strong>3.8.</strong> Funciones</a></li><li><a href="./conceptos_basicos/metodos.html"><strong>3.9.</strong> Métodos</a></li><li><a href="./conceptos_basicos/traits_1.html"><strong>3.10.</strong> Traits (1)</a></li><li><a href="./conceptos_basicos/traits_2.html"><strong>3.11.</strong> Traits (2)</a></li><li><a href="./conceptos_basicos/generics.html"><strong>3.12.</strong> Generics</a></li><li><a href="./conceptos_basicos/high_order_functions.html"><strong>3.13.</strong> Higher Order Functions</a></li><li><a href="./conceptos_basicos/lazy.html"><strong>3.14.</strong> Lazy</a></li></ul></li><li><a href="./conceptos_fundamentales/conceptos_fundamentales.html"><strong>4.</strong> Conceptos Fundamentales</a></li><li><ul class="section"><li><a href="./conceptos_fundamentales/manejerr.html"><strong>4.1.</strong> Manejo de errores</a></li><li><ul class="section"><li><a href="./conceptos_fundamentales/panic.html"><strong>4.1.1.</strong> Panic!</a></li><li><a href="./conceptos_fundamentales/result.html"><strong>4.1.2.</strong> Result</a></li></ul></li><li><a href="./conceptos_fundamentales/heapstack.html"><strong>4.2.</strong> Heap y Stack</a></li><li><a href="./conceptos_fundamentales/ownership.html"><strong>4.3.</strong> Ownership y move</a></li><li><a href="./conceptos_fundamentales/borrow.html"><strong>4.4.</strong> Borrowing</a></li><li><a href="./conceptos_fundamentales/tiempos.html"><strong>4.5.</strong> Tiempos de vida</a></li><li><a href="./conceptos_fundamentales/para que.html"><strong>4.6.</strong> Para que?</a></li><li><a href="./conceptos_fundamentales/closures.html"><strong>4.7.</strong> Closures</a></li><li><a href="./conceptos_fundamentales/smart pointers.html"><strong>4.8.</strong> Smart pointers</a></li><li><ul class="section"><li><a href="./conceptos_fundamentales/smbox.html"><strong>4.8.1.</strong> Box</a></li><li><a href="./conceptos_fundamentales/smrc.html"><strong>4.8.2.</strong> Rc</a></li><li><a href="./conceptos_fundamentales/dyd.html"><strong>4.8.3.</strong> Deref y Drop</a></li><li><a href="./conceptos_fundamentales/smrefcell.html"><strong>4.8.4.</strong> RefCell</a></li><li><a href="./conceptos_fundamentales/smweak.html"><strong>4.8.5.</strong> Weak</a></li><li><a href="./conceptos_fundamentales/smresumen.html"><strong>4.8.6.</strong> Resumen</a></li></ul></li><li><a href="./conceptos_fundamentales/raw pointers.html"><strong>4.9.</strong> Raw pointers</a></li></ul></li><li><a href="./concurrencia/concurrencia.html"><strong>5.</strong> Concurrencia</a></li><li><ul class="section"><li><a href="./concurrencia/threads.html"><strong>5.1.</strong> Threads</a></li><li><a href="./concurrencia/canales.html"><strong>5.2.</strong> Canales</a></li><li><a href="./concurrencia/memoria_compartida.html"><strong>5.3.</strong> Memoria compartida</a></li><li><a href="./concurrencia/extension.html"><strong>5.4.</strong> Extensión</a></li></ul></li><li><a href="./caracteristicas_avanzadas/caracteristicas_avanzadas.html"><strong>6.</strong> Características avanzadas</a></li><li><ul class="section"><li><a href="./caracteristicas_avanzadas/rust_inseguro.html"><strong>6.1.</strong> Rust inseguro</a></li><li><a href="./caracteristicas_avanzadas/tiempos_de_vida_avanzados.html"><strong>6.2.</strong> Tiempos de vida avanzados</a></li><li><a href="./caracteristicas_avanzadas/traits_avanzados.html"><strong>6.3.</strong> Traits avanzados</a></li><li><a href="./caracteristicas_avanzadas/tipos_avanzados.html"><strong>6.4.</strong> Tipos avanzados</a></li><li><a href="./caracteristicas_avanzadas/funciones_y_closures_avanzados.html"><strong>6.5.</strong> Funciones y Closures avanzados</a></li><li><a href="./caracteristicas_avanzadas/llamar_codigo_de_c.html"><strong>6.6.</strong> Llamar código de C</a></li></ul></li><li><a href="./uso/uso.html"><strong>7.</strong> Uso</a></li><li><ul class="section"><li><a href="./uso/casos_de_uso.html"><strong>7.1.</strong> Casos de Uso</a></li></ul></li><li><a href="./bibliografia.html"><strong>8.</strong> Bibliografía</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <p><center><img src="./img/logo.svg" alt="Image" /></p>
+<a class="header" href="print.html#lenguaje-de-programación-rust" id="lenguaje-de-programación-rust"><h1>Lenguaje de programación: Rust</h1></a>
+<p></center></p>
+<a class="header" href="print.html#integrantes" id="integrantes"><h2>Integrantes:</h2></a>
+<ul>
+<li>
+<p>Dyatlov Nikita</p>
+</li>
+<li>
+<p>Marin Francisco</p>
+</li>
+<li>
+<p>Prystupiuk Maximiliano</p>
+</li>
+<li>
+<p>Williner Mariano</p>
+</li>
+</ul>
+<p><center><img src="./img/logo.svg" alt="Image" /></center></p>
+<a class="header" href="print.html#historia" id="historia"><h2>Historia</h2></a>
+<ul>
+<li>
+<p>Multiparadigma</p>
+</li>
+<li>
+<p>Sintaxis similar a C++</p>
+</li>
+<li>
+<p>Diseñado por <strong>Graydon Hoare</strong></p>
+</li>
+<li>
+<p>Impulsado por <strong>Mozilla</strong></p>
+</li>
+<li>
+<p>Mantenido por la comunidad</p>
+</li>
+</ul>
+<a class="header" href="print.html#contribuciones-de-la-comunidad" id="contribuciones-de-la-comunidad"><h2>Contribuciones de la comunidad</h2></a>
+<p><center><img src="./img/comunidad.png" alt="Image" /></center></p>
+<a class="header" href="print.html#a-hrefhttpswwwredditcomrrustcomments27jvdtinternet_archaeology_the_definitive_endall_sourcepor-qué-rusta" id="a-hrefhttpswwwredditcomrrustcomments27jvdtinternet_archaeology_the_definitive_endall_sourcepor-qué-rusta"><h2><a href="https://www.reddit.com/r/rust/comments/27jvdt/internet_archaeology_the_definitive_endall_source/">Por qué 'Rust'</a></h2></a>
+<a class="header" href="print.html#substring-de-robust--un-tipo-de-hongo" id="substring-de-robust--un-tipo-de-hongo"><h3>Substring de RobUST + un tipo de hongo</h3></a>
+<a class="header" href="print.html#a-hrefhttpsbugzillamozillaorgshow_bugcgiid680521significado-del-logoa" id="a-hrefhttpsbugzillamozillaorgshow_bugcgiid680521significado-del-logoa"><h2><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=680521">Significado del logo</a></h2></a>
+<p><img src="./img/cadena.jpg" alt="Drawing" style="width: 550px;"/></p>
+<p><center><img src="./img/target.jpeg" alt="Image" /></center></p>
+<a class="header" href="print.html#target" id="target"><h2>Target</h2></a>
+<ul>
+<li>
+<p>Programadores frustrados de C/C++</p>
+</li>
+<li>
+<p>Programación de sistemas</p>
+</li>
+<li>
+<p>Programación segura</p>
+</li>
+<li>
+<p>Programación concurrente</p>
+</li>
+</ul>
+<a class="header" href="print.html#características" id="características"><h2>Características</h2></a>
+<ul>
+<li>
+<p>Zero cost abstractions</p>
+</li>
+<li>
+<p>No GC (RAII)</p>
+</li>
+<li>
+<p>Task-based​ concurrency</p>
+</li>
+<li>
+<p>Memory safety (❌ nulls ❌ dangling pointers ❌ data races)</p>
+</li>
+<li>
+<p>No buffer​ overflow</p>
+</li>
+<li>
+<p>Immutable​ by default</p>
+</li>
+<li>
+<p>Higher-order​ functions​</p>
+</li>
+<li>
+<p>Pattern​ matching​</p>
+</li>
+<li>
+<p>Polymorphism (❌ herencia)</p>
+</li>
+<li>
+<p>Generics</p>
+</li>
+</ul>
+<a class="header" href="print.html#la-intención-del-lenguaje-es-combinar-varias-características-para-obtener-algo-fácil-de-mantener-y-debuggear-seguro-y-eficiente" id="la-intención-del-lenguaje-es-combinar-varias-características-para-obtener-algo-fácil-de-mantener-y-debuggear-seguro-y-eficiente"><h2>La intención del lenguaje es combinar varias​ características para obtener algo fácil de mantener y debuggear, seguro y eficiente.</h2></a>
+<p><a href="https://www.infoq.com/news/2012/08/Interview-Rust">Entrevista con Graydon Hoare</a></p>
+<a class="header" href="print.html#popularidad" id="popularidad"><h1>Popularidad</h1></a>
+<p><img src="./img/rust_love.png" align="middle" alt="Drawing" style="width: 550px;"/></p>
+<a class="header" href="print.html#el-lenguaje-más-amado-en-stack-overflow-a-hrefhttpsinsightsstackoverflowcomsurvey2016technology-most-loved-dreaded-and-wanted2016a-y-a-hrefhttpsinsightsstackoverflowcomsurvey2017most-loved-dreaded-and-wanted2017a" id="el-lenguaje-más-amado-en-stack-overflow-a-hrefhttpsinsightsstackoverflowcomsurvey2016technology-most-loved-dreaded-and-wanted2016a-y-a-hrefhttpsinsightsstackoverflowcomsurvey2017most-loved-dreaded-and-wanted2017a"><h2>El lenguaje más amado en Stack Overflow <a href="https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted">2016</a> y <a href="https://insights.stackoverflow.com/survey/2017#most-loved-dreaded-and-wanted">2017</a></h2></a>
+<figure>
+    <img src="./img/2016.png" align="middle" alt="Drawing" style="width: 550px;"/>
+    <figcaption style="text-align: center;">Resultados 2016</figcaption>
+</figure>
+<p><br><br><br></p>
+<figure>
+    <img src="./img/2017.png" align="middle" alt="Drawing" style="width: 550px;"/>
+    <figcaption style="text-align: center;">Resultados 2017</figcaption>
+</figure>
+<a class="header" href="print.html#a-hrefhttpsbenchmarksgamealiothdebianorgu64qcomparephplanggpplang2rustbenchmarksa" id="a-hrefhttpsbenchmarksgamealiothdebianorgu64qcomparephplanggpplang2rustbenchmarksa"><h1><a href="https://benchmarksgame.alioth.debian.org/u64q/compare.php?lang=gpp&amp;lang2=rust">Benchmarks</a></h1></a>
+<p>Como se dijo, su target son programadores de C++</p>
+<a class="header" href="print.html#rust--c" id="rust--c"><h2>Rust &gt; C++</h2></a>
+<p><img src="./img/ganaRust.png" align="middle" alt="Rust" style="width: 550px;"/></p>
+<a class="header" href="print.html#c--rust" id="c--rust"><h2>C++ &gt; Rust</h2></a>
+<p><img src="./img/ganaC.png" align="middle" alt="C" style="width: 550px;"/></p>
+<a class="header" href="print.html#cabe-destacar-que-están-en-el-mismo-orden-de-magnitud" id="cabe-destacar-que-están-en-el-mismo-orden-de-magnitud"><h3>Cabe destacar que están en el mismo orden de magnitud</h3></a>
+<a class="header" href="print.html#herramientas" id="herramientas"><h1>Herramientas</h1></a>
+<a class="header" href="print.html#compilador" id="compilador"><h1>Compilador</h1></a>
+<p>Compila a ejecutable o a libreria. No existen los header files.</p>
+<p><code>$ rustc main.rs</code></p>
+<p><code>$ ./main</code></p>
+<a class="header" href="print.html#cargo" id="cargo"><h1>Cargo</h1></a>
+<p>Build system y package manager</p>
+<p><code>$ cargo new hello_world --bin</code></p>
+<p>Crea una estructura de proyecto, permite especificar y descargar dependencias, incluso inicializa git.</p>
+<p><code>$ cargo build</code></p>
+<a class="header" href="print.html#crates" id="crates"><h1>Crates</h1></a>
+<p>Paquetes/librerias de Rust</p>
+<p>Actualmente hay 12,425 listos para utilizar en crates.io</p>
+<a class="header" href="print.html#forma-de-uso" id="forma-de-uso"><h2>Forma de uso</h2></a>
+<ul>
+<li>Cargo.toml</li>
+</ul>
+<pre><code>[package]
+name = &quot;hola&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Rust &lt;AguanteRust@gmail.com&gt;&quot;]
+
+[dependencies]
+rand = &quot;0.3.0&quot;
+</code></pre>
+<p>Dependencias por defecto en crates.io, pero se puede especificar la url.</p>
+<a class="header" href="print.html#documentacion" id="documentacion"><h1>Documentacion</h1></a>
+<p>Se pretende usar sintaxis markdown en comentarios para luego convertirlos en docs html.</p>
+<p><code>$ cargo doc</code></p>
+<a class="header" href="print.html#tests" id="tests"><h1>Tests</h1></a>
+<p>Unit tests incluidos via anotaciones en el código.</p>
+<p><code>$ cargo test</code></p>
+<a class="header" href="print.html#conceptos-básicos" id="conceptos-básicos"><h1>Conceptos básicos</h1></a>
+<p>Y no tanto.</p>
+<a class="header" href="print.html#tipos-básicos-1" id="tipos-básicos-1"><h1>Tipos básicos (1)</h1></a>
+<ul>
+<li>Enteros con signo: <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>isize</code></li>
+<li>Enteros sin signo: <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>usize</code></li>
+<li>Punto flotante: <code>f32</code>, <code>f64</code></li>
+<li><code>bool</code></li>
+<li>Arrays: <code>[1, 2, 3]</code>, <code>[0; 5]</code></li>
+<li>Slices: <code>&amp;array[1..4]</code></li>
+<li>Unicode <code>char</code> de 4 bytes: <code>'a'</code>, <code>'♫'</code></li>
+<li>Strings (UTF-8): <code>&amp;str</code> y <code>String</code></li>
+<li>Alias:
+<pre><code>type Dollar = f64;
+let cookie_price: Dollar = 1.43;
+</code></pre>
+</li>
+</ul>
+<a class="header" href="print.html#tipos-básicos-2" id="tipos-básicos-2"><h1>Tipos básicos (2)</h1></a>
+<ul>
+<li>Tuples: <code>(2, 5.8, 's')</code></li>
+<li>Structs: <code>struct Point { x: f64, y: f64 }</code>
+<ul>
+<li>Puede ser unit-like: <code>struct Comparator</code></li>
+</ul>
+</li>
+<li>Tuple structs: <code>struct Point(i32, i32, i32)</code></li>
+<li>Enums:
+<pre><code>enum BoardGameAction {
+    Move { squares: i32 },
+    Surrender,
+    Chat(String)
+}
+</code></pre>
+</li>
+<li>Rust no tiene null. Hay unit type, <code>()</code>, cuyo único valor es <code>()</code>. Similar a un void.
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let a: () = ();
+println!(&quot;{:?}&quot;, a)
+#}</code></pre></pre>
+</li>
+</ul>
+<a class="header" href="print.html#option" id="option"><h1>Option</h1></a>
+<p>Similar al Maybe de Haskell o Nullable de C#, tiene algo o no tiene nada</p>
+<pre><code>enum Option&lt;T&gt; {
+    Some(T),
+    None
+}
+</code></pre>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn checked_division(dividend: f64, divisor: f64) -&gt; Option&lt;f64&gt; {
+    if divisor == 0.0 { None }
+    else { Some(dividend / divisor) }
+}
+// Se usa pattern matching para leer los resultados
+match checked_division(5.0, 0.0) {
+    Some(result) =&gt; println!(&quot;result: {}&quot;, result),
+    None =&gt; println!(&quot;failed!&quot;)
+}
+#}</code></pre></pre>
+<a class="header" href="print.html#binding" id="binding"><h1>Binding</h1></a>
+<ul>
+<li><code>let immutable_binding = 1</code></li>
+<li><code>let mut mutable_binding = 1</code></li>
+<li>Mutabilidad como propiedad de binding</li>
+<li>Scope &amp; Shadowing</li>
+<li>Inferencia de tipos en base de uso</li>
+<li><code>const N: i32 = 5</code></li>
+<li><code>static N: i32 = 5</code></li>
+<li>Se puede solo declarar, para luego inicializar
+<ul>
+<li>Compilador prohíbe uso de variables no inicializadas, eso no es código compilable:
+<pre><code>let a: String;
+println!(&quot;{}&quot;, a);
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="print.html#expresiones" id="expresiones"><h1>Expresiones</h1></a>
+<p>Rust es principalmente un lenguaje de expresiones.</p>
+<p>Solo hay 2 tipos de statements:</p>
+<ul>
+<li>Declaration statement (<code>let</code>)</li>
+<li>Expression statement (evalua expresión e ignora su resultado)
+<ul>
+<li>Expresion cuyo resultado se reprime con <code>;</code> se evalúa a <code>()</code></li>
+<li><em>Block expression</em> o <em>control flow expression</em> que no termina con expresión</li>
+</ul>
+</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let num = {
+    let mut sum = 0;
+    for num in 0..16 { sum += num; }
+    sum
+};
+println!(&quot;{:?}&quot;, num);
+#}</code></pre></pre>
+<a class="header" href="print.html#control-de-flujo" id="control-de-flujo"><h1>Control de flujo</h1></a>
+<ul>
+<li><code>if / else</code> es una expresión</li>
+<li><code>loop</code> con <code>break</code> y <code>continue</code></li>
+<li><code>while</code></li>
+<li><code>for x in 0..10</code> para usar con iteradores</li>
+<li><code>if let</code> para evaluar desestructuración y asignar al mismo tiempo
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let hayString = Some(&quot;Hay string!&quot;);
+if let Some(text) = hayString {
+    println!(&quot;{}&quot;, text);
+}
+#}</code></pre></pre>
+</li>
+<li><code>while let</code>
+<pre><code>let mut x = BoardGameAction::Move { squares: 1 };
+while let BoardGameAction::Move { squares } = x { //x changes }
+</code></pre>
+</li>
+</ul>
+<a class="header" href="print.html#pattern-matching" id="pattern-matching"><h1>Pattern matching</h1></a>
+<ul>
+<li>Compilador exige ramas para todos los valores posibles</li>
+<li>También es expresión
+<pre><code>let boolean = true;
+let binary = match boolean {
+    false =&gt; 0,
+    true =&gt; 1
+};
+</code></pre>
+</li>
+<li>Soporta desestructuración</li>
+<li>Numerosas variedades:
+<ul>
+<li><code>'r'</code></li>
+<li><code>3 | 4 | 5</code></li>
+<li><code>num @ 5...29</code></li>
+<li><code>(0, y)</code></li>
+<li><code>Color::RGB(r, g, b)</code></li>
+<li><code>Point { x, y, _ }</code></li>
+<li><em>match guards</em> para filtrar ramas: <code>(x, y) if x + y == 0</code></li>
+</ul>
+</li>
+</ul>
+<a class="header" href="print.html#funciones" id="funciones"><h1>Funciones</h1></a>
+<pre><code>fn foo(x: i32) -&gt; i32 {
+    ...
+    //expression
+}
+</code></pre>
+<ul>
+<li>Obligatorio indicar los tipos</li>
+<li>Existe <code>return</code>, se considera poco sano</li>
+<li>Funciones divergentes: <code>fn diverges() -&gt; ! {...}</code>
+<ul>
+<li>Nunca se devuelven, distinto de devolver &quot;nada&quot; (unit type, <code>()</code>)</li>
+<li>Para wrappear loops infinitos o codigo que termina el programa</li>
+</ul>
+</li>
+<li>Binding de función a una variable
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn plus_one(i: i32) -&gt; i32 { i + 1 }
+let f = plus_one;
+println!(&quot;{}&quot;, f(5));
+#}</code></pre></pre>
+</li>
+</ul>
+<a class="header" href="print.html#métodos" id="métodos"><h1>Métodos</h1></a>
+<p>No hay clases de cajon, sí los mecanismos de POO</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct Point { x: f64, y: f64 }
+
+impl Point {
+    fn new(x: f64, y: f64) -&gt; Point { //associated function = static
+        Point { x: x, y: y }
+    }
+
+    fn distance_to_origin(&amp;self) -&gt; f64 {
+        f64::sqrt(f64::powf(self.x, 2.0) + f64::powf(self.y, 2.0))
+    }
+}
+
+let c = Point::new(4.0, -3.0);
+println!(&quot;{}&quot;, c.distance_to_origin());
+#}</code></pre></pre>
+<a class="header" href="print.html#traits-1" id="traits-1"><h1>Traits (1)</h1></a>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct Square { side: f64 }
+struct Circle { radius: f64 }
+trait Shape {
+    fn area(&amp;self) -&gt; f64;
+}
+
+impl Shape for Square {
+    fn area(&amp;self) -&gt; f64 { self.side * self.side }
+}
+
+impl Shape for Circle {
+    fn area(&amp;self) -&gt; f64 { std::f64::consts::PI * (self.radius * self.radius) }
+}
+
+let s = Square { side: 2.5 };
+let c = Circle { radius: 5.0 };
+println!(&quot;s.area: {s_a}, c.area: {c_a}&quot;, s_a = s.area(), c_a = c.area());
+#}</code></pre></pre>
+<a class="header" href="print.html#traits-2" id="traits-2"><h1>Traits (2)</h1></a>
+<ul>
+<li>Permiten implementaciones por defecto que pueden ser sobreescritas en <code>impl</code></li>
+<li>Permiten realizar &quot;herencia&quot;, solo a nivel de traits
+<pre><code>trait Foo {
+    fn foo(&amp;self);
+}
+
+trait Bar : Foo {
+    fn bar(&amp;self) {
+        self.foo();
+    }
+}
+
+struct Baz;
+impl Foo for Baz {...}
+impl Bar for Baz {
+    fn bar(&amp;self) {...}
+}
+</code></pre>
+</li>
+</ul>
+<a class="header" href="print.html#generics" id="generics"><h1>Generics</h1></a>
+<pre><code>fn foo(shape: Shape) {...}
+
+foo(Square { side: 5.0 });
+</code></pre>
+<p>No. Para que funcione: ganerics y trait bound.</p>
+<pre><code>fn foo&lt;T: Shape&gt;(shape: T) {...}
+</code></pre>
+<ul>
+<li>Permite tipos múltiples y trait bounds múltiples.
+<pre><code>fn bar&lt;T, K&gt;(x: T, y: K) where T: Shape_3D, K: Shape_2D + Clone {...}
+</code></pre>
+</li>
+<li>Aplicable a structs.
+<pre><code>struct Object&lt;T: 3D_Shape, K: Shape_2D&gt; {
+    form: T,
+    sprite: K,
+}
+</code></pre>
+</li>
+</ul>
+<a class="header" href="print.html#high-order-functions" id="high-order-functions"><h1>High Order Functions</h1></a>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn mul(x: f64, n: f64) -&gt; f64 { x * n }
+fn sum(x: f64, n: f64) -&gt; f64 { x + n }
+fn div(x: f64, n: f64) -&gt; f64 { x / n }
+fn sub(x: f64, n: f64) -&gt; f64 { x - n }
+
+fn expr(base: f64, n: f64, functions: Vec&lt;fn(f64, f64) -&gt; f64&gt;) -&gt; f64 {
+    let mut result = base;
+    for func in functions.iter() {
+        result = func(result, n);
+    }
+    result
+}
+
+let mut functions: Vec&lt;fn(f64, f64) -&gt; f64&gt; = Vec::new();
+functions.extend([sum, mul, sub, div].iter());
+println!(&quot;{}&quot;, expr(3.0, 2.0, functions));  // (((3+2)*2)-2)/2 = 4
+#}</code></pre></pre>
+<a class="header" href="print.html#lazy" id="lazy"><h1>Lazy</h1></a>
+<ul>
+<li>No existe en forma nativa (hay librería hecha por comunidad)</li>
+<li>Internamente usa lazy para iteradores
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// suma de cuadrados de números impares hasta un límite
+let limit = 10;
+
+let result: u32 = (0..)
+    .take_while(|&amp;n| n &lt;= limit)
+    .filter(|&amp;n| n % 2 == 1)
+    .map(|n| n * n)
+    .fold(0, |sum, i| sum + i);
+
+println!(&quot;{}&quot;, result);
+#}</code></pre></pre>
+</li>
+</ul>
+<a class="header" href="print.html#conceptos-fundamentales" id="conceptos-fundamentales"><h1>Conceptos fundamentales</h1></a>
+<p>Lo interesante del lenguaje.</p>
+<a class="header" href="print.html#manejo-de-errores" id="manejo-de-errores"><h1>Manejo de errores</h1></a>
+<p>No existen las exepciones.</p>
+<p>Si el error es catastrófico: ¡Pánico 😱!</p>
+<p>Si es salvable, devolver un struct con el resultado o el error.</p>
+<p>Si es algo que se espera que pueda ser nada, y no un error, devolver un Option.</p>
+<a class="header" href="print.html#panic" id="panic"><h1>Panic!</h1></a>
+<p>Macro que termina el programa.</p>
+<p>Por defecto limpia la memoria antes de abortar, pero se puede cambiar en las opciones de compilación.</p>
+<p>Uso:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    panic!(&quot;Paniquié!&quot;);
+}
+
+</code></pre></pre>
+<p>En la libreria estandar:</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let vector = vec![1,2,3];
+    vector[100];
+#}
+
+</code></pre></pre>
+<p>Método seguro: Devuelve un Option</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let vector = vec![1,2,3];
+    println!(&quot;{:?}&quot;,vector.get(100));
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#result" id="result"><h1>Result</h1></a>
+<p>Para errores salvables, un simple struct.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {}
+enum Result&lt;T, E&gt; {
+    Ok(T),
+    Err(E),
+}
+
+</code></pre></pre>
+<p>Se usa con pattern matching</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::fs::File;
+#use std::io::ErrorKind;
+#fn main() {
+    let f = File::open(&quot;noExiste.txt&quot;);
+    match f {
+        Ok(_file) =&gt; println!(&quot;OK&quot;),
+        Err(ref _error) if _error.kind() == ErrorKind::NotFound 
+        =&gt; { println!(&quot;{:?}&quot;,_error) },
+        Err(_error) =&gt; { panic!() },
+    };
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#azucar" id="azucar"><h2>Azucar</h2></a>
+<p>Si hay error, panic, sino obtener el valor interior:</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::fs::File;
+#fn main() {
+    File::open(&quot;noExiste.txt&quot;).unwrap();
+#}
+
+</code></pre></pre>
+<p>Lo mismo pero permite poner un mensaje:</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::fs::File;
+#fn main() {
+    File::open(&quot;noExiste.txt&quot;).expect(&quot;Un mensaje&quot;);
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#propagación-de-results" id="propagación-de-results"><h1>Propagación de results</h1></a>
+<p>Se puede lanzar hacia arriba a mitad de expresión con &quot;return&quot;</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::io;
+#use std::fs::File;
+fn main() { 
+    println!(&quot;{:?}&quot;,leerArchivo()); 
+}
+
+fn leerArchivo() -&gt; Result&lt;String, io::Error&gt; {
+    let f = File::open(&quot;noExiste.txt&quot;);
+    let mut f = match f {
+        Ok(file) =&gt; file,
+        Err(e) =&gt; return Err(e),
+    };
+    // Imaginar que sacamos info del archivo
+    Ok(String::new())
+}
+
+</code></pre></pre>
+<a class="header" href="print.html#azucar-1" id="azucar-1"><h2>Azucar</h2></a>
+<p>Se usa el símbolo &quot;<strong>?</strong>&quot;</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::io;
+#use std::fs::File;
+fn main() { 
+    println!(&quot;{:?}&quot;,leerArchivo()); 
+}
+
+fn leerArchivo() -&gt; Result&lt;String, io::Error&gt; {
+    let f = File::open(&quot;noExiste.txt&quot;)?;
+    // Imaginar que sacamos info del archivo
+    Ok(String::new())
+}
+
+</code></pre></pre>
+<p>El compilador se asegura que &quot;?&quot; solo funciona dentro de funciones que pueden devolver result.</p>
+<a class="header" href="print.html#heap-stack-referencias" id="heap-stack-referencias"><h1>Heap, stack, referencias</h1></a>
+<a class="header" href="print.html#stack" id="stack"><h2>Stack</h2></a>
+<p>Se alocan los tipos básicos numéricos de tamaño conocido en tiempo de compilación.</p>
+<ul>
+<li>Enteros</li>
+<li>Floats</li>
+<li>Bools</li>
+<li>Tuplas que contengan solo estos tipos</li>
+</ul>
+<p>Se pasan por copia.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut a = 1;
+    let mut b = a;
+    b += 1;
+    println!(&quot;a:{} b:{}&quot;,a,b);
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#heap" id="heap"><h2>Heap</h2></a>
+<p>El resto de los tipos se aloca en el heap.</p>
+<p>Luego se los pasa por referencia.</p>
+<p>Si se quiere copia hay que hacerlo explicito:</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let a = String::from(&quot;Hola&quot;);
+    let mut b = a.clone();
+    b.push('!');
+    println!(&quot;a:{} b:{}&quot;,a,b);
+#}
+
+</code></pre></pre>
+<p>Si intento usar dos referencias a algo... no compila!</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let a = String::from(&quot;Hola&quot;);
+    let b = a;
+    println!(&quot;a:{} b:{}&quot;,a,b);
+#}
+
+</code></pre></pre>
+<p>Por que?</p>
+<p>Cuando termina el scope de una variable, se la libera de memoria. Si tuvieramos dos punteros a lo mismo, se lo liberaría 2 veces. Rust ataja este problema en tiempo de compilación. Crea el concepto de &quot;<strong>ownership</strong>&quot;, &quot;<strong>move</strong>&quot;, y &quot;<strong>borrowing</strong>&quot;.</p>
+<a class="header" href="print.html#ownership-y-move" id="ownership-y-move"><h1>Ownership y move</h1></a>
+<a class="header" href="print.html#las-reglas-de-rust" id="las-reglas-de-rust"><h2>Las reglas de Rust</h2></a>
+<ol>
+<li>Todo valor en Rust tiene una variable que se llama owner.</li>
+<li>En un dado momento, solo puede haber un owner.</li>
+<li>Cuando el owner sale de scope, se hace drop de la variable.</li>
+</ol>
+<p>Estas reglas son obligatorias y chequeadas por el compilador.</p>
+<p>Solo el owner puede hacer uso de la variable.</p>
+<a class="header" href="print.html#move" id="move"><h2>Move</h2></a>
+<p>Se llama move al cambio de owner. Pasar el valor, retornarlo, o bindearlo a otra variable cambia el owner.</p>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let s1 = String::new();
+    let _s2 = s1;
+    println!(&quot;{}&quot;,s1);
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let s1 = String::new();
+    {
+        let _s2 = s1;
+    }
+    println!(&quot;{}&quot;,s1);
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">fn seVuelveOwner(_s : String) {}
+
+fn main() {
+    let s = String::from(&quot;Rust&quot;);
+    seVuelveOwner(s);
+    println!(&quot;{}&quot;,s);	
+}
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn devuelveOwner(s : String) -&gt; String {
+    s
+}
+
+fn main() {
+    let mut s = String::from(&quot;Rust&quot;);
+    s = devuelveOwner(s);
+    println!(&quot;{}&quot;,s);	
+}
+
+</code></pre></pre>
+<a class="header" href="print.html#borrow" id="borrow"><h1>Borrow</h1></a>
+<p>Operador de referencia: &amp;</p>
+<ul>
+<li>
+<p>&amp;Tipo : El tipo es una referencia inmutable</p>
+</li>
+<li>
+<p>&amp;mut Tipo : El tipo es una referencia mutable</p>
+</li>
+<li>
+<p>&amp;variable : Obtiene una referencia a la variable</p>
+</li>
+<li>
+<p>&amp;mut variable : Obtiene una referencia mutable a la variable</p>
+</li>
+<li>
+<p>*variable : Desreferencia, si hace falta.</p>
+</li>
+</ul>
+<p>Se &quot;pide prestado&quot; el valor. Nos volvemos dueños, pero al final lo devolvemos a su dueño original.</p>
+<p>Se mantienen las reglas de ownership.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn pidePrestado(_s : &amp;String) { } // Inmutable
+
+fn main() {
+    let s = String::from(&quot;Rust&quot;);
+    pidePrestado(&amp;s);
+    println!(&quot;{}&quot;,s);	
+}
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn pidePrestado(s : &amp;mut String) { // Mutable
+    s.push('!');
+}
+
+fn main() {
+    let mut s = String::from(&quot;Rust&quot;);
+    pidePrestado(&amp;mut s);
+    println!(&quot;{}&quot;,s);	
+}
+
+</code></pre></pre>
+<a class="header" href="print.html#pero-y-los-métodos" id="pero-y-los-métodos"><h2>Pero y los métodos?</h2></a>
+<p>Los metodos toman &amp;self como primer parametro y Rust hace desreferenciacion automática apropiada para que sea más lindo, en vez de tener varias sintaxis.</p>
+<p>Se puede ver la equivalencia a continuación.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut s = String::from(&quot;Rust&quot;);
+    String::push(&amp;mut s, '!');
+    (&amp;mut s).push('!');
+    s.push('!');
+    println!(&quot;{}&quot;,s)
+#}
+
+</code></pre></pre>
+<p>En otros casos, si hace falta desreferenciar explicitamente.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut v1 = 1;
+    {
+        let v2 = &amp;mut v1;
+        *v2 += 1;
+    }
+    println!(&quot;v1:{}&quot;,v1);	
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#reglas-de-borrows" id="reglas-de-borrows"><h2>Reglas de borrows</h2></a>
+<ul>
+<li>
+<p>En un momento dado se puede tener de forma mutuamente exclusiva:</p>
+<ul>
+<li>
+<p>Una referencia mutable</p>
+</li>
+<li>
+<p>N referencias inmutables</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Las referencias deben ser siempre validas</p>
+</li>
+</ul>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut v1 = 1;
+    let v2 = &amp;v1;
+    let v3 = &amp;v1;
+    let v4 = &amp;v1;
+    println!(&quot;v1:{} v2:{} v3:{} v4:{}&quot;,v1,v2,v3,v4);	
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut v1 = 1;
+    let v2 = &amp;mut v1;
+    *v2 += 1;
+    println!(&quot;v1:{}&quot;,v1);
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut _v1 = 1;
+    let _v2 = &amp;mut _v1;
+    let _v3 = &amp;mut _v1;
+#}
+
+</code></pre></pre>
+<p>Sigue valiendo que solo se puede modificar el valor mutable si soy dueño.</p>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut _v1 = 1;
+    let _v2 = &amp;_v1;
+    _v1 += 1;
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#lifetimes" id="lifetimes"><h1>Lifetimes</h1></a>
+<p>Concepto de Rust: Poder saber si seguira siendo valido lo que estamos refiriendo.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a;
+    {
+        let b = 5;
+        a = b;
+    }
+    println!(&quot;a: {}&quot;, a);
+}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a;         // -------+- 'a
+    {              //        |
+        let b = 5; // -+- 'b |
+        a = &amp;b;    //  |     |
+    }              // -+     |
+    println!(&quot;a: {}&quot;, a);// -+
+}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">static a : &amp;str = &quot;Rust&quot;;
+
+fn referencia() -&gt; &amp;str {
+    &amp;a	
+}
+
+fn main() {
+    let b = referencia();
+}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">fn fun(a:&amp;String, b:&amp;String) -&gt; &amp;String {
+    &amp;a	
+}
+
+fn main() {
+    let a = String::new();
+    let b = String::new();
+    let c = fun(a,b);
+}
+
+</code></pre></pre>
+<p>El lifetime es necesario para saber cuando terminar el borrow.</p>
+<a class="header" href="print.html#sintaxis-de-lifetime" id="sintaxis-de-lifetime"><h2>Sintaxis de lifetime</h2></a>
+<ul>
+<li>
+<p>fn funcion&lt;'a&gt; especifica un tiempo de vida genérico para asociar</p>
+</li>
+<li>
+<p>&amp;'a Tipo: Referencia con tiempo de vida explicito</p>
+</li>
+</ul>
+<p>Nota: Si dos parametros de entrada tienen el mismo lifetime asignado, el valor tomado será el más chico</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">static a : &amp;str = &quot;Rust&quot;;
+
+fn referencia() -&gt; &amp;'static str {
+    &amp;a	
+}
+
+fn main() {
+    let b = referencia();
+}
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn fun&lt;'a&gt;(a : &amp;'a String, b : &amp;String) -&gt; &amp;'a String {
+    &amp;a	
+}
+
+fn main() {
+    let a = String::new();
+    let b = String::new();
+    let c = fun(&amp;a,&amp;b);
+}
+
+</code></pre></pre>
+<p>Los casos típicos son inferidos por el compilador.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn fun(a : &amp; String) -&gt; &amp; String {
+    &amp;a	
+}
+
+fn main() {
+    let a = String::new();
+    let c = fun(&amp;a);
+}
+
+</code></pre></pre>
+<p>El concepto también aplica a structs con referencias</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+struct algo&lt;'a&gt; {
+    s : &amp;'a str,	
+}
+
+#}</code></pre></pre>
+<a class="header" href="print.html#para-que-esto-de-ownership-y-lifetimes" id="para-que-esto-de-ownership-y-lifetimes"><h1>Para que esto de ownership y lifetimes?</h1></a>
+<ul>
+<li>
+<p>Manejo de memoria &quot;automático&quot; sin GC (RAII forzado)</p>
+</li>
+<li>
+<p>No permite cosas inseguras en memoria: Usar cosas sin inicializar, no hay overflows/dangling pointers/segfaults.</p>
+</li>
+<li>
+<p>Hace dificil tener memory leaks, aunque no imposible.</p>
+</li>
+<li>
+<p>Evita data races.</p>
+</li>
+</ul>
+<p>Basicamente el código es seguro en tiempo de compilación.</p>
+<p>Pero todo esto es un poco restrictivo.</p>
+<a class="header" href="print.html#closures" id="closures"><h1>Closures</h1></a>
+<p>Funciones anonimas que pueden capturar estado externo.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let a = String::from(&quot;A&quot;);
+    let f = || { println!(&quot;{}&quot;,a); };
+    let g = |p1:i32| p1+1;
+    let h = |p1,p2| -&gt; i32 { p1+p2 };
+    f();
+    println!(&quot;{}&quot;,g(1));
+    println!(&quot;{}&quot;,h(1,1));
+#}
+
+</code></pre></pre>
+<p>Se pueden inferir los tipos de parametro o se los puede explicitar. Los <strong>{}</strong> son opcionales para funciones de una sola linea.</p>
+<a class="header" href="print.html#capturar-el-ambiente" id="capturar-el-ambiente"><h2>Capturar el ambiente</h2></a>
+<ul>
+<li>
+<p>Por referencia: &amp;T, borrow inmutable</p>
+</li>
+<li>
+<p>Por referencia mutable: &amp;mut T, borrow mutable</p>
+</li>
+<li>
+<p>Por valor: T, se vuelve owner</p>
+</li>
+</ul>
+<p>El compilador infiere que es lo más apropiado segun lo que hagamos dentro.</p>
+<p>Siguen valiendo todas las reglas de Rust ya vistas.</p>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let a = String::from(&quot;A&quot;);
+    let f = || { println!(&quot;{}&quot;,a); }; // Borrow inmutable
+    let _c = a; // Intento tomar ownership
+    f();
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#tipo-de-closures" id="tipo-de-closures"><h2>Tipo de closures</h2></a>
+<p>Son de tipo desconocido por lo cual hay que usar generics.</p>
+<p>Pero, segun como capturan el ambiente implementan uno de los siguientes traits.</p>
+<ul>
+<li>
+<p>Fn: Borrow inmutable</p>
+</li>
+<li>
+<p>FnMut: Borrow mutable</p>
+</li>
+<li>
+<p>FnOnce: Se vuelve owner</p>
+</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">fn llama&lt;F&gt;(mut f : F) where
+    F: FnMut(char) {
+        f('!');
+    }
+
+fn main() {
+    let mut a = String::from(&quot;Rust&quot;);
+    let f = |p1| { 
+        a.push(p1);
+        println!(&quot;{}&quot;,a);
+    };
+    llama(f);
+}
+
+</code></pre></pre>
+<a class="header" href="print.html#captura-por-valor" id="captura-por-valor"><h2>Captura por valor</h2></a>
+<p>Para forzar que se vuelva owner se usa la palabra move.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut a = String::from(&quot;Rust&quot;);
+    {
+        let mut f = || { 
+            a.push('!');
+            println!(&quot;{}&quot;,a);
+        };
+        f();
+    }
+    println!(&quot;{}&quot;,a);
+#}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let mut a = String::from(&quot;Rust&quot;);
+    {
+        let mut f = move || { 
+            a.push('!');
+            println!(&quot;{}&quot;,a);
+        };
+        f();
+    }
+    println!(&quot;{}&quot;,a);
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#smart-pointers" id="smart-pointers"><h1>Smart pointers</h1></a>
+<p>Nos facilitan la vida permitiendonos doblar algunas reglas de Rust.</p>
+<p>Uno puede crear los suyos propios, pero hablaremos de los de la libreria estandar.</p>
+<a class="header" href="print.html#box" id="box"><h1>Box</h1></a>
+<p>Una caja con algo adentro. No tiene overhead. Es de tamaño fijo.</p>
+<a class="header" href="print.html#casos-de-uso" id="casos-de-uso"><h2>Casos de uso</h2></a>
+<ul>
+<li>
+<p>Necesito algo de tamaño fijo, pero mi variable es de tamaño variable. Lo meto en esta caja que es de tamaño fijo.</p>
+</li>
+<li>
+<p>Tengo datos y que naturalmente van al stack y se pasan por copia, pero los quiero en el heap por referencia</p>
+</li>
+<li>
+<p>Quiero ser dueño de algo con una trait particular, pero no me interesa su tipo.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplos" id="ejemplos"><h2>Ejemplos</h2></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut a = Box::new(1);
+    *a += 1;
+    println!(&quot;a = {}&quot;, *a);
+}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">enum ListaEstiloOZ&lt;T&gt;{
+    Val(T, ListaEstiloOZ&lt;T&gt;),
+    Nil, 
+}
+#fn main() {}
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::fmt;
+##[derive(Debug)]
+enum ListaEstiloOZ&lt;T&gt;{
+    Val(T, Box&lt;ListaEstiloOZ&lt;T&gt;&gt;),
+    Nil, 
+}
+#use ListaEstiloOZ::Val;
+#use ListaEstiloOZ::Nil;
+
+fn imprimir&lt;T : fmt::Display&gt;(lista : ListaEstiloOZ&lt;T&gt;) {
+    match lista {
+        Nil =&gt; println!(&quot;Nil&quot;),
+        Val(a,b) =&gt; { println!(&quot;{}&quot;,a); imprimir(*b);},
+    }		
+}
+
+fn main(){
+    let a = Val(1, Box::new(Val(2, Box::new(Nil))));
+    println!(&quot;{:?}&quot;,a);
+    imprimir(a);
+}
+
+
+</code></pre></pre>
+<a class="header" href="print.html#rc-reference-counted-smart-pointer" id="rc-reference-counted-smart-pointer"><h1>Rc: Reference counted smart pointer</h1></a>
+<p>Permite multiples owners, pero solo inmutablemente.</p>
+<p>Clonar el puntero copia la referencia interna e incrementa el contador de referencias.</p>
+<p>Cuando las referencias se vuelven 0, se borra el contenido.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">use std::rc::Rc;
+fn main() {
+    let a = Rc::new(String::from(&quot;Rust&quot;));
+    let b = Rc::clone(&amp;a);
+    let c = Rc::clone(&amp;a);
+    println!(&quot;{}-{}-{}&quot;,a,b,c);
+    println!(&quot;#refs: {}&quot;,Rc::strong_count(&amp;a));
+}
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">use std::rc::Rc;
+fn main() {
+    let mut a = Rc::new(String::from(&quot;Rust&quot;));
+    a.push('!');
+}
+
+</code></pre></pre>
+<a class="header" href="print.html#deref-y-drop" id="deref-y-drop"><h1>Deref y drop</h1></a>
+<p>Traits especiales de Rust.</p>
+<a class="header" href="print.html#deref" id="deref"><h1>Deref</h1></a>
+<p>Permite especificar que obtenemos al desreferenciar el struct, por lo cual podemos hacer que se comporte como una referencia común.</p>
+<p>Ademas realiza coerciones automáticas cuando las funciones y demas esperan referencias.</p>
+<a class="header" href="print.html#derefmut" id="derefmut"><h1>DerefMut</h1></a>
+<p>Lo mismo pero para cuando se esperan referencias mutables.</p>
+<a class="header" href="print.html#drop" id="drop"><h1>Drop</h1></a>
+<p>Especifica que tiene que hacer el struct cuando sale del scope.</p>
+<p>Casos tipicos: Reference counting, struct que representa un archivo, struct que representa un mutex.</p>
+<p>Si por alguna razon queremos llamar a drop antes que lo haga el lenguaje naturalmente, esta permitido via std::mem::drop.</p>
+<a class="header" href="print.html#refcell" id="refcell"><h1>RefCell</h1></a>
+<p>Similar a un Box, tambien solo para single threaded, pero permite compilar rompiendo las reglas de borrows.</p>
+<p>Las reglas aun deben cumplirse en tiempo de ejecución, de no hacerlo hay un panic!.</p>
+<a class="header" href="print.html#pattern-de-mutabilidad-interior" id="pattern-de-mutabilidad-interior"><h2>Pattern de mutabilidad interior</h2></a>
+<p>Mediante borrow() y borrow_mut() podemos elegir que tipo de borrow queremos hacer en tiempo de ejecución, pese a que la refcell sea inmutable.</p>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a = String::from(&quot;Rust&quot;);
+    a.push('!');
+}
+
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut a = String::from(&quot;Rust&quot;);
+    a.push('!');
+    println!(&quot;{}&quot;,a);
+}
+
+
+</code></pre></pre>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">use std::cell::RefCell;
+fn main() {
+    let a = RefCell::new(String::from(&quot;Rust&quot;));
+    a.borrow_mut().push('!');
+    println!(&quot;{}&quot;,a.borrow());
+}
+
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">use std::cell::RefCell;
+fn main() {
+    let a = RefCell::new(String::from(&quot;Rust&quot;));
+    let _b = a.borrow_mut();
+    let _c = a.borrow();
+}
+
+
+</code></pre></pre>
+<a class="header" href="print.html#combinado-con-rc" id="combinado-con-rc"><h2>Combinado con Rc</h2></a>
+<p>Nos permite tener multiples borrows mutables 😲</p>
+<p>Hay que seguir respetando las reglas de runtime.</p>
+<p>✔️</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::rc::Rc;
+#use std::cell::RefCell;
+fn main() {
+    let a = Rc::new(RefCell::new(String::from(&quot;Rust&quot;)));
+    let b = Rc::clone(&amp;a);
+    let c = Rc::clone(&amp;a);
+    a.borrow_mut().push('!');
+    b.borrow_mut().push('!');
+    c.borrow_mut().push('!');
+    println!(&quot;{}&quot;,a.borrow());
+}
+
+
+</code></pre></pre>
+<p>❌</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::rc::Rc;
+#use std::cell::RefCell;
+fn main() {
+    let a = Rc::new(RefCell::new(String::from(&quot;Rust&quot;)));
+    let b = Rc::clone(&amp;a);
+    let _ra = a.borrow_mut();
+    let _rb = b.borrow_mut();
+}
+
+
+</code></pre></pre>
+<a class="header" href="print.html#weak" id="weak"><h1>Weak</h1></a>
+<p>Si usamos <strong>Rc</strong>, es posible crear referencias circulares que nunca se liberan.</p>
+<p>Leakear memoria es indeseable, pero permitido por ser memory safe.</p>
+<p>El <strong>Weak</strong> es un derivado del <strong>Rc</strong> que no aumenta el contador, no toma ownership.</p>
+<p>Sin embargo, no podría esto causar dangling pointers? El weak devuelve un Option.</p>
+<pre><pre class="playpen"><code class="language-rust">#use std::rc::Rc;
+fn main() {
+    let a = Rc::new(String::from(&quot;Rust&quot;));
+    let b = Rc::clone(&amp;a);
+    let c = Rc::downgrade(&amp;a);
+    println!(&quot;strong = {}, weak = {}&quot;,Rc::strong_count(&amp;a),Rc::weak_count(&amp;a));
+    println!(&quot;{:?}&quot;,b);
+    println!(&quot;{:?}&quot;,c);
+    println!(&quot;{:?}&quot;,c.upgrade());
+    drop(a);
+    drop(b);
+    println!(&quot;{:?}&quot;,c.upgrade());
+}
+
+
+</code></pre></pre>
+<a class="header" href="print.html#resumen" id="resumen"><h1>Resumen</h1></a>
+<ul>
+<li>
+<p>Box: Tamaño fijo, contiene algo que esta en el heap.</p>
+</li>
+<li>
+<p>Rc: Permite multiples owners inmutables. Single threaded.</p>
+</li>
+<li>
+<p>Weak: Variante del Rc para no leakear memoria en ciclos.</p>
+</li>
+<li>
+<p>RefCell: Permite romper las reglas de borrows en tiempo de compilación, aunque no de ejecución. Single threaded.</p>
+</li>
+</ul>
+<a class="header" href="print.html#otros-que-no-vimos" id="otros-que-no-vimos"><h2>Otros que no vimos</h2></a>
+<ul>
+<li>
+<p>Cell: Lo mismo que el refcell pero para valores copy. No causa panics porque no hace falta sin referencias.</p>
+</li>
+<li>
+<p>Arc: Version thread safe de Rc. Muchas veces el tipo que llevan dentro es un atomic.</p>
+</li>
+</ul>
+<a class="header" href="print.html#raw-pointers" id="raw-pointers"><h1>Raw pointers</h1></a>
+<p>Como los de C.</p>
+<p>Se pierde absolutamente toda seguridad.</p>
+<p>Raramente necesarios para funcionamiento interno con ciertas librerias y demas.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    let x = 5;
+    let raw = &amp;x as *const i32;
+    let points_at = unsafe { *raw };
+    println!(&quot;raw points at {}&quot;, points_at);
+#}
+
+</code></pre></pre>
+<a class="header" href="print.html#concurrencia" id="concurrencia"><h1>Concurrencia</h1></a>
+<p>Uno de los objetivos principales de Rust.</p>
+<a class="header" href="print.html#threads" id="threads"><h1>Threads</h1></a>
+<ul>
+<li>
+<p><strong>Rust</strong> utiliza el modelo conocido como <strong>1:1</strong> (por cada thread del lenguaje, hay un thread del sistema operativo) dado que tiene menos overhead que el modelo <strong>M:N</strong>.</p>
+</li>
+<li>
+<p>Se crean con la función <code>thread::spawn</code> que recibe un <strong>closure</strong> con el código a ejecutar en el nuevo thread y devuelve un <code>JoinHandle</code> que se puede utilizar para esperar a que el thread termine de ejecutarse.</p>
+</li>
+<li>
+<p>Para poder utilizar datos del thread principal se necesita usar la palabra reservada <code>move</code> para que el nuevo thread pueda tomar ownership de esos datos.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo" id="ejemplo"><h2>Ejemplo</h2></a>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+
+fn main() {
+    let data_from_main_thread = &quot;data from main thread&quot;;
+    let handle = thread::spawn(move || {
+        for i in 1..10 {
+            println!(&quot;Spawned thread print Nº {}. Data: {}.&quot;, i, data_from_main_thread);
+        }
+    });
+
+    for i in 1..5 {
+        println!(&quot;Print Nº {} from main thread.&quot;, i);
+    }
+
+    handle.join();
+}
+
+</code></pre></pre>
+<a class="header" href="print.html#canales" id="canales"><h1>Canales</h1></a>
+<ul>
+<li>
+<p>Se utilizan para pasar mensajes entre threads.</p>
+</li>
+<li>
+<p>Se crean con la función <code>mpsc::channel</code> que devuelve una tupla con un <strong>sender</strong> y un <strong>receiver</strong>. El <strong>sender</strong> puede clonarse.</p>
+</li>
+<li>
+<p>Para enviar mensajes se usa la función <code>send</code> y para recibir mensajes las funciones <code>try_recv</code> y <code>recv</code>. La última es bloqueante.</p>
+</li>
+<li>
+<p>Se puede usar el <strong>receiver</strong> como un iterador para recibir valores hasta que se cierre el canal.</p>
+</li>
+<li>
+<p>Los datos enviados en la función <code>send</code> pasan a ser propiedad del <strong>receiver</strong>.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplos-1" id="ejemplos-1"><h2>Ejemplos</h2></a>
+<pre><pre class="playpen"><code class="language-rust">use std::sync::mpsc;
+use std::thread;
+
+fn main() {
+    let (sender, receiver) = mpsc::channel();
+    let sender2 = sender.clone();
+
+    thread::spawn(move || {
+        let message = String::from(&quot;message&quot;);
+        sender.send(message).unwrap();
+    });
+
+    thread::spawn(move || {
+        let message2 = String::from(&quot;message2&quot;);
+        sender2.send(message2).unwrap();
+    });
+
+
+    for _ in 0..2 {
+        println!(&quot;Received: {}&quot;, receiver.recv().unwrap());
+    }
+}
+</code></pre></pre>
+<pre><pre class="playpen"><code class="language-rust">use std::sync::mpsc;
+use std::thread;
+
+fn main() {
+    let (sender, receiver) = mpsc::channel();
+    let sender2 = sender.clone();
+
+    thread::spawn(move || {
+        let message = String::from(&quot;message&quot;);
+        sender.send(message).unwrap();
+    });
+
+    thread::spawn(move || {
+        let message2 = String::from(&quot;message2&quot;);
+        sender2.send(message2).unwrap();
+    });
+
+
+    for received in receiver {
+        println!(&quot;Received: {}&quot;, received);
+    }
+}
+</code></pre></pre>
+<a class="header" href="print.html#memoria-compartida" id="memoria-compartida"><h1>Memoria compartida</h1></a>
+<a class="header" href="print.html#mutex" id="mutex"><h2>Mutex</h2></a>
+<ul>
+<li>
+<p>Permiten que los datos sean accedidos por un sólo thread a la vez.</p>
+</li>
+<li>
+<p>Se crean con la función <code>Mutex::new</code> sobre los datos que queremos proteger.</p>
+</li>
+<li>
+<p>Para poder acceder a los datos se debe obtener primero un lock sobre ellos mediante la función <code>lock</code>.</p>
+</li>
+<li>
+<p>Al salir de scope, el <strong>mutex</strong> se libera automáticamente.</p>
+</li>
+<li>
+<p>Para compartir un <strong>mutex</strong> entre varios threads, se debe wrappearlo en un <strong>atomic reference counter</strong> el cual garantiza que las operaciones sean thread safe.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-1" id="ejemplo-1"><h2>Ejemplo</h2></a>
+<pre><pre class="playpen"><code class="language-rust">use std::sync::{Mutex, Arc};
+use std::thread;
+
+fn main() {
+    let counter_mutex = Arc::new(Mutex::new(0));
+    let mut handles = vec![];
+
+    for i in 0..10 {
+        let inner_counter_mutex = counter_mutex.clone();
+        let handle = thread::spawn(move || {
+            let mut counter = inner_counter_mutex.lock().unwrap();
+            println!(&quot;Thread Nº {} has the lock&quot;, i);
+            *counter += 1;
+            println!(&quot;Thread Nº {} still has the lock&quot;, i);
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    println!(&quot;Counter: {}&quot;, *counter_mutex.lock().unwrap());
+}
+</code></pre></pre>
+<a class="header" href="print.html#extensión" id="extensión"><h1>Extensión</h1></a>
+<p><strong>Rust</strong> permite crear nuestra propia implementación de concurrencia diferente a la que se encuentra en la <strong>standard library</strong> utilizando los traits <code>Send</code> and <code>Sync</code>.</p>
+<a class="header" href="print.html#send" id="send"><h2>Send</h2></a>
+<ul>
+<li>
+<p>Indica que el ownership puede ser transferido a otro thread.</p>
+</li>
+<li>
+<p>Casi todos los tipos son <code>Send</code> con algunas excepciones.</p>
+</li>
+<li>
+<p>Los tipos que están compuestos por tipos <code>Send</code>, también lo son.</p>
+</li>
+</ul>
+<a class="header" href="print.html#sync" id="sync"><h2>Sync</h2></a>
+<ul>
+<li>
+<p>Indica que el acceso desde múltiples threads es seguro.</p>
+</li>
+<li>
+<p>Los tipos que están compuestos por tipos <code>Sync</code>, también lo son.</p>
+</li>
+</ul>
+<a class="header" href="print.html#características-avanzadas" id="características-avanzadas"><h1>Características avanzadas</h1></a>
+<p>El 1% restante de <strong>Rust</strong>.</p>
+<a class="header" href="print.html#rust-inseguro" id="rust-inseguro"><h1>Rust inseguro</h1></a>
+<ul>
+<li>
+<p><strong>Rust</strong> permite utilizar código considerado inseguro, delegando la responsabilidad en el programador, dentro de un bloque definido con la palabra reservada <code>unsafe</code>.</p>
+</li>
+<li>
+<p>Dentro de un bloque marcado como inseguro, el compilador no realiza chequeos de <strong>memory safety</strong> lo que permite ciertas libertades.</p>
+</li>
+</ul>
+<a class="header" href="print.html#desreferenciado-de-raw-pointers" id="desreferenciado-de-raw-pointers"><h2>Desreferenciado de raw pointers</h2></a>
+<ul>
+<li>Si bien la creación de estos punteros es válida fuera de un bloque inseguro, el acceso a la información a la que apunta no lo es.</li>
+</ul>
+<hr />
+<a class="header" href="print.html#funciones-inseguras" id="funciones-inseguras"><h2>Funciones inseguras</h2></a>
+<ul>
+<li>
+<p>Funciones que tienen en su interior código inseguro.</p>
+</li>
+<li>
+<p>Se declaran agregando <code>unsafe</code> antes de la definición de la misma.</p>
+</li>
+</ul>
+<hr />
+<a class="header" href="print.html#abstracciones-seguras-con-código-inseguro" id="abstracciones-seguras-con-código-inseguro"><h2>Abstracciones seguras con código inseguro</h2></a>
+<ul>
+<li>Casos en que el compilador, por ser conservador, no permite realizar una operación que sería válida.</li>
+</ul>
+<a class="header" href="print.html#ejemplo-2" id="ejemplo-2"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">use std::slice;
+
+fn main() {
+    fn split_at_mut(slice: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;mut [i32]) {
+        let len = slice.len();
+        let ptr = slice.as_mut_ptr();
+
+        assert!(mid &lt;= len);
+
+        unsafe {
+            (slice::from_raw_parts_mut(ptr, mid),
+            slice::from_raw_parts_mut(ptr.offset(mid as isize), len - mid))
+        }
+    }
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#llamado-de-código-externo" id="llamado-de-código-externo"><h2>Llamado de código externo</h2></a>
+<ul>
+<li>Llamar código escrito en otro lenguaje es, para <strong>Rust</strong> inseguro por definición.</li>
+</ul>
+<hr />
+<a class="header" href="print.html#acceso-o-modificación-de-variable-estática-mutable" id="acceso-o-modificación-de-variable-estática-mutable"><h2>Acceso o modificación de variable estática mutable</h2></a>
+<ul>
+<li><strong>Rust</strong> lo considera inseguro dado que pueden ser accedidas por varios threads lo que puede causar condiciones de carrera.</li>
+</ul>
+<hr />
+<a class="header" href="print.html#implementación-de-traits-inseguros" id="implementación-de-traits-inseguros"><h2>Implementación de traits inseguros</h2></a>
+<ul>
+<li>
+<p>Similar a las <strong>unsafe functions</strong>.</p>
+</li>
+<li>
+<p>Se declaran agregando <code>unsafe</code> antes de la definición y de la implementación del trait.</p>
+</li>
+</ul>
+<a class="header" href="print.html#tiempos-de-vida-avanzados" id="tiempos-de-vida-avanzados"><h1>Tiempos de vida avanzados</h1></a>
+<a class="header" href="print.html#lifetime-subtyping" id="lifetime-subtyping"><h2>Lifetime Subtyping</h2></a>
+<ul>
+<li>
+<p>Si el lifetime <code>'b</code> contiene <code>'a</code>, entonces <code>'b</code> es subtipo de <code>'a</code>.</p>
+</li>
+<li>
+<p>Se declara de la forma <code>'b: 'a</code>.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplos-2" id="ejemplos-2"><h3>Ejemplos</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    fn max&lt;'a, 'b: 'a&gt;(x: &amp;'a i32, y: &amp;'b i32) -&gt; &amp;'a i32 {
+        if *x &gt; *y {    
+            x
+        } else {
+            y
+        }
+    }
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#lifetime-bounds" id="lifetime-bounds"><h2>Lifetime Bounds</h2></a>
+<ul>
+<li>
+<p>Son restricciones para los lifetimes de los tipos genéricos.</p>
+</li>
+<li>
+<p>Se declaran de la misma forma que en <strong>lifetime subtyping</strong>.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplos-3" id="ejemplos-3"><h3>Ejemplos</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    struct Ref&lt;'a, T: 'a&gt;(&amp;'a T);
+}
+</code></pre></pre>
+<a class="header" href="print.html#traits-avanzados" id="traits-avanzados"><h1>Traits avanzados</h1></a>
+<a class="header" href="print.html#associated-types" id="associated-types"><h2>Associated Types</h2></a>
+<ul>
+<li>
+<p>Son placeholders de tipos en la definición de un trait.</p>
+</li>
+<li>
+<p>Se definen con la palabra reservada <code>type</code>.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-3" id="ejemplo-3"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    pub trait Iterator {
+        type Item;
+        fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt;;
+    }
+
+    struct Counter{
+    }
+
+    impl Iterator for Counter {
+        type Item = u32;
+
+        fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+            None
+        }
+    }
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#sobrecarga-de-operadores" id="sobrecarga-de-operadores"><h2>Sobrecarga de operadores</h2></a>
+<ul>
+<li><strong>Rust</strong> no permite crear ni sobrecargar operadores pero provee operaciones en la librería estándar que si pueden ser sobrecargadas implementando los traits asociados con el operador.</li>
+</ul>
+<a class="header" href="print.html#ejemplo-4" id="ejemplo-4"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">use std::ops::Add;
+
+fn main() {
+    struct Millimeters(u32);
+    struct Meters(u32);
+
+    impl Add for Millimeters {
+        type Output = Millimeters;
+
+        fn add(self, other: Millimeters) -&gt; Millimeters {
+            Millimeters(self.0 + other.0)
+        }
+    }
+
+    impl Add&lt;Meters&gt; for Millimeters {
+        type Output = Millimeters;
+
+        fn add(self, other: Meters) -&gt; Millimeters {
+            Millimeters(self.0 + (other.0 * 1000))
+        }
+    }
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#fully-qualified-syntax" id="fully-qualified-syntax"><h2>Fully Qualified Syntax</h2></a>
+<a class="header" href="print.html#ejemplo-5" id="ejemplo-5"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">trait Animal {
+    fn baby_name() -&gt; String;
+}
+
+struct Dog;
+
+impl Dog {
+    fn baby_name() -&gt; String {
+        String::from(&quot;Spot&quot;)
+    }
+}
+
+impl Animal for Dog {
+    fn baby_name() -&gt; String {
+        String::from(&quot;puppy&quot;)
+    }
+}
+
+fn main() {
+    println!(&quot;A baby dog is called a {}&quot;, &lt;Dog as Animal&gt;::baby_name());
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#supertraits" id="supertraits"><h2>Supertraits</h2></a>
+<ul>
+<li>Son traits requeridos por el trait que se está implementando.</li>
+</ul>
+<a class="header" href="print.html#ejemplo-6" id="ejemplo-6"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">trait Supertrait {
+}
+
+trait HasSupertrait: Supertrait {
+}
+
+
+fn main() {
+    struct SomeStruct {
+    }
+
+    impl HasSupertrait for SomeStruct {
+    }
+    impl Supertrait for SomeStruct {
+    }
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#newtype-pattern" id="newtype-pattern"><h2>Newtype pattern</h2></a>
+<ul>
+<li>
+<p><strong>Rust</strong> solo permite implementar traits siempre y cuando el trait o el tipo sean locales a nuestro crate.</p>
+</li>
+<li>
+<p>Este pattern se puede utilizar para evitar esa restricción.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-7" id="ejemplo-7"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">use std::fmt;
+
+fn main() {
+    struct Wrapper(Vec&lt;String&gt;);
+
+    impl fmt::Display for Wrapper {
+        fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+            write!(f, &quot;[{}]&quot;, self.0.join(&quot;, &quot;))
+        }
+    }
+}
+</code></pre></pre>
+<a class="header" href="print.html#tipos-avanzados" id="tipos-avanzados"><h1>Tipos avanzados</h1></a>
+<a class="header" href="print.html#type-aliases" id="type-aliases"><h2>Type aliases</h2></a>
+<ul>
+<li><strong>Rust</strong> permite definir alias para los tipos de la siguiente forma <code>type alias = tipo</code></li>
+</ul>
+<hr />
+<a class="header" href="print.html#the-never-type" id="the-never-type"><h2>The Never type</h2></a>
+<ul>
+<li>
+<p>En <strong>Rust</strong> existe el tipo <code>!</code> llamado <strong>Never type</strong>.</p>
+</li>
+<li>
+<p>Se utiliza para indicar que una función nunca retorna.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-8" id="ejemplo-8"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    fn never_return() -&gt; ! {
+        loop {
+        }
+    }
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#trait-sized" id="trait-sized"><h2>Trait Sized</h2></a>
+<ul>
+<li>
+<p>Por defecto los generics aceptan sólo tipos para los cuales se conoce en tiempo de compilación el tamaño que ocupan en memoria.</p>
+</li>
+<li>
+<p>Para indicar al compilador que se quiere utilizar un <strong>usized type</strong>, se debe agregar la sintaxis <code>&lt;T: ?Sized&gt;</code></p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-9" id="ejemplo-9"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    fn generic_function&lt;T&gt;(t: T) {
+    }
+
+    fn actual_generic_function&lt;T: Sized&gt;(t: T) {
+    }
+
+    fn dinamically_sized_generic_function&lt;T: ?Sized&gt;(t: &amp;T) {
+    }
+}
+</code></pre></pre>
+<a class="header" href="print.html#advanced-functions--closures" id="advanced-functions--closures"><h1>Advanced Functions &amp; Closures</h1></a>
+<a class="header" href="print.html#function-pointers" id="function-pointers"><h2>Function pointers</h2></a>
+<ul>
+<li>
+<p>Las funciones pueden recibir otras funciones como parámetro.</p>
+</li>
+<li>
+<p>Se debe indicar con el tipo <code>fn</code>, que tipo de argumento(s) recibe y que tipo devuelve (si lo hiciera) de la misma forma que se definen las funciones normalmente.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-10" id="ejemplo-10"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn returns_five(x: i32) -&gt; i32 {
+    println!(&quot;returns_five invoked with argument: {}&quot;, x);
+    5
+}
+
+fn returns_five_as_param(function: fn(i32) -&gt; i32, argument: i32) {
+    println!(&quot;returns_five_as_param invoked. Result {}&quot;, function(argument));
+}
+
+fn main() {
+    returns_five_as_param(returns_five, 1);
+}
+</code></pre></pre>
+<hr />
+<a class="header" href="print.html#returning-closures" id="returning-closures"><h2>Returning Closures</h2></a>
+<ul>
+<li>
+<p><strong>Rust</strong> no permite utilizar <strong>closures</strong> cómo return type de una función porque no puede saber cuanto espacio va a necesitar para almacenar dicho closure.</p>
+</li>
+<li>
+<p>Se debe encapsular haciendo uso de un trait.</p>
+</li>
+</ul>
+<a class="header" href="print.html#ejemplo-11" id="ejemplo-11"><h3>Ejemplo</h3></a>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    fn returns_closure() -&gt; Box&lt;Fn(i32) -&gt; i32&gt; {
+        Box::new(|x| x + 1)
+    }
+}
+</code></pre></pre>
+<a class="header" href="print.html#llamando-código-de-c" id="llamando-código-de-c"><h1>Llamando código de C</h1></a>
+<ul>
+<li>Suponiendo que tenemos un archivo de c llamado <strong>c_file.c</strong> con una función llamada <strong>c_function()</strong>.</li>
+</ul>
+<a class="header" href="print.html#ejemplo-12" id="ejemplo-12"><h2>Ejemplo</h2></a>
+<pre><pre class="playpen"><code class="language-rust">#[link(name = &quot;c_file&quot;)]
+extern {
+    fn c_function();
+}
+
+fn safe_call_to_c_function() {
+    println!(&quot;Calling c function&quot;);
+    unsafe {
+        c_function();
+    }
+}
+
+fn main() {
+    safe_call_to_c_function();
+}
+</code></pre></pre>
+<a class="header" href="print.html#uso" id="uso"><h1>Uso</h1></a>
+<p><strong>Rust</strong> es uno de los lenguajes mas amados de los últimos años, por consiguiente, cada vez mas organizaciones lo están comenzando a utilizar.</p>
+<a class="header" href="print.html#casos-de-uso-1" id="casos-de-uso-1"><h1>Casos de uso</h1></a>
+<p>La página oficial del lenguaje <strong>Rust</strong> cuenta con la sección <a href="https://www.rust-lang.org/en-US/friends.html">friends of rust</a> donde se encuentra un listado completo de las organizaciones que utilizan <strong>Rust</strong> en producción (y quieren que el mundo lo sepa), siendo las mas conocidas las siguientes:</p>
+<ul>
+<li>
+<p>Mozilla.</p>
+</li>
+<li>
+<p>Dropbox.</p>
+</li>
+<li>
+<p>Academia.edu.</p>
+</li>
+<li>
+<p>ImageOptim.</p>
+</li>
+<li>
+<p>Atlassian.</p>
+</li>
+<li>
+<p>Samsung SmartThings.</p>
+</li>
+</ul>
+<a class="header" href="print.html#bibliografía" id="bibliografía"><h1>Bibliografía</h1></a>
+<p>The rust programming language, ambas ediciones:</p>
+<p><a href="https://doc.rust-lang.org/book/">https://doc.rust-lang.org/book/</a></p>
+<p>Rust by example:</p>
+<p><a href="https://rustbyexample.com/">https://rustbyexample.com/</a></p>
+<p>The Rustonomicon: Fetures arcanas, inseguras, inestables</p>
+<p><a href="https://doc.rust-lang.org/nomicon/">https://doc.rust-lang.org/nomicon/</a></p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+
+                
+
+            </div>
+
+            
+
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+        <script>
+            $(document).ready(function() {
+                window.print();
+            })
+        </script>
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>
